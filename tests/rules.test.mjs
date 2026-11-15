@@ -123,8 +123,25 @@ test('security rules', async (t) => {
     await denied(set(ref(alice.db, 'names/robert'), null));
   });
 
+  await t.test('paper mode: shared letters, no answer check', async () => {
+    const cell = (c, key, l, grid = 'p1', u = c.uid) =>
+      set(ref(c.db, `cells/${room}/${grid}/${key}`), { l, u, t: serverTimestamp() });
+    await denied(cell(alice, '1_1', 'A', 'g1')); // grid g1 is not in paper mode
+    await ok(update(ref(admin.db), { [`rooms/${room}/grid`]: { id: 'p1', mode: 'paper', rows: 2, cols: 2 } }));
+    await ok(cell(alice, '1_1', 'A'));
+    await ok(cell(bob, '1_1', 'B')); // like on paper, anyone may correct a box
+    await denied(cell(alice, '1_2', 'ab'));
+    await denied(cell(alice, '1_2', '1'));
+    await denied(cell(alice, '1_2', 'A', 'p1', bob.uid)); // in someone else's name
+    await denied(cell(alice, '1_2', 'A', 'p0')); // old grid
+    await denied(cell(alice, 'x', 'A'));
+    const carol = await client();
+    await denied(cell(carol, '1_2', 'A')); // not a member of this game
+    await ok(set(ref(alice.db, `cells/${room}/p1/1_1`), null)); // erase
+  });
+
   await t.test('organizer deletes a room', async () => {
-    await ok(update(ref(admin.db), { [`rooms/${room}`]: null, [`roomIndex/${room}`]: null, [`secret/${room}`]: null, [`found/${room}`]: null }));
+    await ok(update(ref(admin.db), { [`rooms/${room}`]: null, [`roomIndex/${room}`]: null, [`secret/${room}`]: null, [`found/${room}`]: null, [`cells/${room}`]: null }));
   });
   process.exit(0);
 });

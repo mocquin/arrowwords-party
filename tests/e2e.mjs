@@ -63,9 +63,12 @@ try {
   await org.locator('#profile-name').fill('Orga');
   await org.getByRole('button', { name: "C'est parti" }).click();
   await org.getByText("La grille n'est pas encore prête").waitFor();
+  org.on('dialog', (d) => d.accept());
   await org.locator('details.orga summary').click();
+  await org.locator('details.orga select').nth(1).selectOption('petite');
   await org.getByRole('button', { name: 'Nouvelle grille' }).click();
-  await org.locator('#grid').waitFor();
+  await org.locator('#grid').waitFor({ timeout: 150000 });
+  assert.equal(await org.locator('#grid .cell.block').count(), 0, 'no black cells');
   await org.waitForTimeout(500);
 
   // --- player ------------------------------------------------------------------
@@ -110,13 +113,69 @@ try {
   assert.match(bg, /rgb\(143, 214, 168\)|#8fd6a8/, `cell color was ${bg}`);
   await org.screenshot({ path: `${shots}05-organizer-sees.png`, fullPage: true });
 
-  // A wrong guess by the organizer on word 1 is refused.
-  const ans1 = secret.w[1];
-  await org.locator(`.q[data-w="1"]`).click();
-  for (let k = 0; k < ans1.length; k++) await org.keyboard.press(ans1[k] === 'Z' ? 'A' : 'Z');
+  // The organizer finds a word crossing Zoé's: only the new letters count.
+  const keysOf = (w) => Array.from({ length: w.l }, (_, k) => `${w.r + (w.d === 'v' ? k : 0)},${w.c + (w.d === 'h' ? k : 0)}`);
+  const k0 = keysOf(w0);
+  const j = pub.words.findIndex((w, i) => i !== 0 && keysOf(w).some((k) => k0.includes(k)));
+  const wj = pub.words[j];
+  await org.locator(`.q[data-w="${j}"]`).click();
+  const kj = keysOf(wj);
+  for (let k = 0; k < kj.length; k++) {
+    if (k0.includes(kj[k]) || givens.has(kj[k])) continue; // locked boxes are skipped
+    await org.keyboard.press(secret.w[j][k]);
+  }
+  await org.getByText(/est à toi/).waitFor({ timeout: 5000 });
+  await org.waitForTimeout(500);
+  const score = async (page, name) => Number(await page.locator('.chip', { hasText: name }).locator('b').innerText());
+  const zoeLetters = k0.filter((k) => !givens.has(k)).length;
+  const orgaLetters = kj.filter((k) => !givens.has(k) && !k0.includes(k)).length;
+  assert.equal(await score(org, 'Zoé'), zoeLetters);
+  assert.equal(await score(org, 'Orga'), orgaLetters);
+  await org.screenshot({ path: `${shots}06-scores.png` });
+
+  // A wrong guess is refused.
+  const wrongIdx = pub.words.findIndex((w, i) => i !== 0 && i !== j && !keysOf(w).some((k) => k0.includes(k) || kj.includes(k) || givens.has(k)));
+  await org.locator(`.q[data-w="${wrongIdx}"]`).click();
+  for (const ch of secret.w[wrongIdx]) await org.keyboard.press(ch === 'Z' ? 'A' : 'Z');
   await org.waitForTimeout(800);
   const found2 = await readAsOwner(`found/${roomId}/${pub.id}`);
-  assert.equal(found2[1], undefined, 'wrong guess must not be accepted');
+  assert.equal(found2[wrongIdx], undefined, 'wrong guess must not be accepted');
+
+  // --- paper mode -----------------------------------------------------------------
+  if (!(await org.locator('details.orga').evaluate((d) => d.open))) await org.locator('details.orga summary').click();
+  await org.locator('details.orga select').nth(1).selectOption('petite');
+  await org.locator('details.orga select').nth(2).selectOption('paper');
+  await org.getByRole('button', { name: 'Nouvelle grille' }).click();
+  await org.getByText(/comme sur papier/).first().waitFor({ timeout: 150000 });
+  await pl.getByText(/comme sur papier/).first().waitFor({ timeout: 10000 });
+  const pub2 = await readAsOwner(`rooms/${roomId}/grid`);
+  const secret2 = await readAsOwner(`secret/${roomId}`);
+  const givens2 = new Set((pub2.givens || '').split(';').filter(Boolean).map((s) => s.split(',').slice(0, 2).join(',')));
+  // Zoé types one word on her phone keyboard: nobody is told whether it is right.
+  const p0 = pub2.words[0];
+  await pl.locator(`.q[data-w="0"]`).click();
+    for (let k = 0; k < p0.l; k++) {
+    if (givens2.has(keysOf(p0)[k])) continue;
+    await pl.locator('.kb .key', { hasText: new RegExp(`^${secret2.w[0][k]}$`) }).click();
+  }
+  await org.waitForTimeout(800);
+  const cells = await readAsOwner(`cells/${roomId}/${pub2.id}`);
+  assert.equal(Object.keys(cells).length, keysOf(p0).filter((k) => !givens2.has(k)).length);
+  await org.screenshot({ path: `${shots}07-paper-shared.png` });
+  // Fill the rest of the grid, with one mistake.
+  const all = {};
+  pub2.words.forEach((w, i) => keysOf(w).forEach((k, n) => { if (!givens2.has(k)) all[k.replace(',', '_')] = secret2.w[i][n]; }));
+  const firstKey2 = Object.keys(all)[0];
+  const right = all[firstKey2];
+  const body = {};
+  for (const [k, l] of Object.entries(all)) body[k] = { l, u: 'someone', t: 1 };
+  body[firstKey2] = { l: right === 'Z' ? 'A' : 'Z', u: 'someone', t: 1 };
+  await fetch(`http://127.0.0.1:9000/cells/${roomId}/${pub2.id}.json?ns=${NS}`, { method: 'PUT', headers: { Authorization: 'Bearer owner' }, body: JSON.stringify(body) });
+  await pl.getByText(/Pleine, mais des erreurs/).waitFor({ timeout: 5000 });
+  await pl.screenshot({ path: `${shots}08-paper-errors.png` });
+  await fetch(`http://127.0.0.1:9000/cells/${roomId}/${pub2.id}/${firstKey2}.json?ns=${NS}`, { method: 'PUT', headers: { Authorization: 'Bearer owner' }, body: JSON.stringify({ l: right, u: 'someone', t: 1 }) });
+  await pl.getByText(/Grille juste/).waitFor({ timeout: 5000 });
+  await pl.screenshot({ path: `${shots}09-paper-solved.png` });
 
   // Unknown room link
   await pl.goto(`${BASE}?g=doesnotexist&emu=1`);

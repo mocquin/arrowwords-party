@@ -9,6 +9,7 @@ words and in terms of what the owner clicks.
   sizes live in `LEVELS` and `SIZES`, the only place to change them.
 - `js/db.js`: the only module that touches Firebase. The data layout is documented at its top.
 - `js/app.js`: the UI. Database text goes through `textContent`, never `innerHTML`.
+- `js/generator-worker.js`: runs the generator in Web Workers (several seeds in parallel).
 - `data/dict-fr.txt`: word list `MOT|niveau|définition facile|définition difficile`. Words
   without accents. Tier 1 = common, 3 = rare. A clue must not contain its answer.
 - `firebase/database.rules.json`: the security rules. `__ADMIN_UID__` is replaced by the
@@ -20,8 +21,10 @@ words and in terms of what the owner clicks.
 `tests/shots/*.png`. Add an entry to `CHANGELOG.md`.
 
 ## Known limits (v1)
-- About 13% of cells end up as dark blocks: the generator needs more short words. Growing
-  `data/dict-fr.txt` is the main lever.
+- The generator fills every cell (no black cells). Sizes above 12 × 16 do not fill in time with
+  ~8,000 words; a bigger word list (more 2–7 letter words) is the main lever, then search speed.
+- Paper mode trusts players for letters (anyone in the game can overwrite a box); only a SHA-256
+  fingerprint of the full grid is public, so single answers stay hidden.
 - A player who clears their browser loses their name; the organizer can free names (not in the
   UI yet).
 - A player can try many guesses for a word; there is no rate limit (no server).

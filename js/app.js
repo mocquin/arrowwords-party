@@ -7,7 +7,7 @@
 // textContent (never innerHTML), so a name or a clue cannot inject code.
 
 import * as DB from './db.js';
-import { LEVELS, SIZES, parseDictionary, generateGrid, lettersOf, arrowKind } from './generator.js';
+import { LEVELS, SIZES, MODES, lettersOf, arrowKind, answerString, sha256 } from './generator.js';
 
 const COLORS = [
   '#f4a3a3', '#f7c08a', '#f5e17a', '#b9e08a', '#8fd6a8', '#8ad3d6',
@@ -44,7 +44,7 @@ function toast(msg, kind = '') {
 
 function view(...children) {
   const v = $('#view');
-  v.replaceChildren(...children);
+  v.replaceChildren(...children.filter(Boolean));
   return v;
 }
 
@@ -336,10 +336,39 @@ async function copy(text) {
 
 // --- game room --------------------------------------------------------------------
 
-let dictPromise = null;
-function loadDictionary() {
-  dictPromise ??= fetch('data/dict-fr.txt').then((r) => r.text()).then(parseDictionary);
-  return dictPromise;
+/**
+ * Make a grid in background workers (several in parallel, different seeds);
+ * the first one to succeed wins.
+ */
+function generateInWorkers({ level, rows, cols, timeLimitMs = 90000 }) {
+  const n = Math.max(2, Math.min(6, (navigator.hardwareConcurrency || 4) - 1));
+  const dictUrl = new URL('data/dict-fr.txt', location.href).href;
+  return new Promise((resolve, reject) => {
+    const workers = [];
+    let failed = 0;
+    const stop = () => workers.forEach((w) => w.terminate());
+    for (let k = 0; k < n; k++) {
+      const w = new Worker(new URL('./generator-worker.js', import.meta.url), { type: 'module' });
+      workers.push(w);
+      w.onmessage = (e) => {
+        if (e.data.ok) {
+          stop();
+          resolve(e.data.grid);
+        } else if (++failed === n) {
+          stop();
+          reject(new Error(e.data.error));
+        }
+      };
+      w.onerror = (e) => {
+        if (++failed === n) {
+          stop();
+          reject(new Error(e.message || 'worker error'));
+        }
+      };
+      const seed = crypto.getRandomValues(new Uint32Array(1))[0];
+      w.postMessage({ dictUrl, level, rows, cols, seed, timeLimitMs });
+    }
+  });
 }
 
 async function roomPage(roomId) {
@@ -356,6 +385,8 @@ class Game {
     this.model = null;
     this.found = {};
     this.unwatchFound = null;
+    this.cells = {}; // paper mode: shared letters, "r_c" -> {l, u}
+    this.check = null; // paper mode: null | 'ok' | 'errors'
     this.sel = null; // {w: word index, k: cell key}
     this.drafts = {};
     this.tried = new Map(); // word idx -> Set of wrong strings
@@ -387,10 +418,13 @@ class Game {
       this.unwatchFound?.();
       this.model = room.grid ? buildModel(room.grid) : null;
       this.found = {};
+      this.cells = {};
+      this.check = null;
       this.sel = null;
       this.tried.clear();
       this.drafts = this.loadDrafts();
-      if (this.model) this.unwatchFound = DB.watchFound(this.roomId, gridId, (f) => this.onFound(f));
+      if (this.model?.mode === 'paper') this.unwatchFound = DB.watchCells(this.roomId, gridId, (c) => this.onCells(c));
+      else if (this.model) this.unwatchFound = DB.watchFound(this.roomId, gridId, (f) => this.onFound(f));
       this.render();
     } else {
       this.renderScores();
@@ -466,7 +500,14 @@ class Game {
             node = el('div', { class: `cell clue n${info.clues.length}`, onclick: () => this.clickClue(key) },
               ...info.clues.map((wi) => {
                 const w = m.words[wi];
-                return el('div', { class: `q a-${w.arrow}`, 'data-w': wi },
+                return el('div', {
+                  class: `q a-${w.arrow}`,
+                  'data-w': wi,
+                  onclick: (ev) => {
+                    ev.stopPropagation();
+                    this.select(wi, this.firstOpen(wi));
+                  },
+                },
                   el('span', { class: 't', text: w.q }),
                   el('span', { class: 'arrow', 'aria-hidden': 'true' }),
                 );
@@ -502,23 +543,27 @@ class Game {
   organizerTools() {
     const level = el('select', {}, ...Object.entries(LEVELS).map(([k, v]) => el('option', { value: k, selected: k === 'moyen' }, v.label)));
     const size = el('select', {}, ...Object.entries(SIZES).map(([k, v]) => el('option', { value: k }, v.label)));
+    const mode = el('select', {}, ...Object.entries(MODES).map(([k, v]) => el('option', { value: k }, v.label)));
     const btn = el('button', {
       class: 'primary',
       onclick: async () => {
         if (this.model && !confirm('Remplacer la grille actuelle pour tout le monde ?')) return;
         btn.disabled = true;
-        btn.textContent = 'Génération…';
+        btn.textContent = 'Génération… (jusqu’à une minute)';
         try {
-          const entries = await loadDictionary();
           const sz = SIZES[size.value];
-          await new Promise((r) => setTimeout(r, 20));
-          const grid = generateGrid({ entries, level: level.value, rows: sz.rows, cols: sz.cols, attempts: 16, samples: 400 });
+          const grid = await generateInWorkers({ level: level.value, rows: sz.rows, cols: sz.cols });
           grid.letters = lettersOf(grid.words);
+          grid.mode = mode.value;
+          if (grid.mode === 'paper') {
+            grid.salt = [...crypto.getRandomValues(new Uint8Array(12))].map((b) => b.toString(16).padStart(2, '0')).join('');
+            grid.hash = await sha256(grid.salt + answerString(grid.rows, grid.cols, grid.letters));
+          }
           await DB.publishGrid(this.roomId, grid);
           toast(`Nouvelle grille : ${grid.words.length} mots.`);
         } catch (e) {
           console.error(e);
-          toast('La génération a échoué.', 'bad');
+          toast('Pas de grille trouvée à temps. Réessayez, ou choisissez une taille plus petite.', 'bad');
         } finally {
           btn.disabled = false;
           btn.textContent = 'Nouvelle grille';
@@ -530,15 +575,18 @@ class Game {
       el('div', { class: 'row wrap' },
         el('label', {}, 'Difficulté ', level),
         el('label', {}, 'Taille ', size),
+        el('label', {}, 'Validation ', mode),
         btn,
         el('button', { onclick: () => copy(linkFor(this.roomId)) }, 'Copier le lien de la partie'),
       ),
-      el('p', { class: 'muted small' }, 'Facile : mots courants, définitions simples, quelques lettres offertes. Difficile : définitions plus subtiles, aucune lettre offerte.'),
+      el('p', { class: 'muted small' }, 'Facile : mots courants, définitions simples, des lettres offertes. Difficile : mots plus rares, définitions plus subtiles, aucune lettre offerte.'),
+      el('p', { class: 'muted small' }, 'Validation mot par mot : chaque mot juste est confirmé et prend la couleur de celui qui l’a trouvé. Comme sur papier : les lettres de chacun s’affichent pour tous, sans rien confirmer ; on ne sait que la grille est juste qu’une fois entièrement remplie.'),
     );
   }
 
   onFound(found) {
     this.found = found;
+    this.computeOwners();
     this.refreshAll();
     const m = this.model;
     if (m && Object.keys(found).length === m.words.length && m.words.length > 0) {
@@ -546,8 +594,49 @@ class Game {
     }
   }
 
-  /** Letter shown in a cell: found > given > draft. */
+  /**
+   * Instant mode: each letter belongs to the player who found it first.
+   * A word found later only earns the letters that were still empty.
+   */
+  computeOwners() {
+    this.owner = new Map();
+    const order = Object.entries(this.found).sort(([ia, a], [ib, b]) => (a.t || 0) - (b.t || 0) || ia - ib);
+    for (const [wi, f] of order) {
+      for (const k of this.model.words[wi].keys) {
+        if (!this.owner.has(k) && !this.model.givens.has(k)) this.owner.set(k, f.u);
+      }
+    }
+  }
+
+  /** Paper mode: shared letters changed. */
+  onCells(cells) {
+    this.cells = cells;
+    this.refreshAll();
+    this.checkPaperGrid();
+  }
+
+  /** Paper mode: when every box is filled, compare the whole grid with the answer. */
+  async checkPaperGrid() {
+    const m = this.model;
+    const letters = new Map();
+    for (const [key, info] of m.cell) if (info.type === 'L') letters.set(key, this.letterAt(key).ch);
+    const before = this.check;
+    if ([...letters.values()].some((x) => !x)) this.check = null;
+    else this.check = (await sha256(m.salt + answerString(m.rows, m.cols, letters))) === m.hash ? 'ok' : 'errors';
+    if (this.check !== before) {
+      this.renderScores();
+      if (this.check === 'ok') toast('Grille terminée et juste, bravo à tous !', 'good');
+      if (this.check === 'errors') toast('La grille est pleine, mais il y a des erreurs.', 'bad');
+    }
+  }
+
+  /** Letter shown in a cell: found > given > draft (instant); given > shared (paper). */
   letterAt(key) {
+    if (this.model.mode === 'paper') {
+      if (this.model.givens.has(key)) return { ch: this.model.givens.get(key), kind: 'given' };
+      const c = this.cells[key.replace(',', '_')];
+      return c ? { ch: c.l, kind: 'paper', u: c.u } : { ch: '', kind: '' };
+    }
     const info = this.model.cell.get(key);
     for (const wi of [info.h, info.v]) {
       if (wi === undefined) continue;
@@ -588,17 +677,11 @@ class Game {
       }
       return;
     }
-    const { ch, kind } = this.letterAt(key);
-    node.firstChild.textContent = ch;
-    node.dataset.kind = kind;
-    const colors = [info.h, info.v]
-      .filter((wi) => wi !== undefined && this.found[wi])
-      .map((wi) => player(this.found[wi].u, () => this.refreshAll())?.c || '#ddd');
-    if (colors.length === 2 && colors[0] !== colors[1]) {
-      node.style.background = `linear-gradient(135deg, ${colors[0]} 50%, ${colors[1]} 50%)`;
-    } else {
-      node.style.background = colors[0] || '';
-    }
+    const shown = this.letterAt(key);
+    node.firstChild.textContent = shown.ch;
+    node.dataset.kind = shown.kind;
+    const who = this.model.mode === 'paper' ? shown.u : this.owner?.get(key);
+    node.style.background = who ? player(who, () => this.refreshAll())?.c || '#ddd' : '';
     node.classList.toggle('inword', !!selWord && selWord.keys.includes(key));
     node.classList.toggle('cur', !!this.sel && this.sel.k === key);
   }
@@ -606,9 +689,14 @@ class Game {
   renderScores() {
     const box = $('#scores');
     if (!box) return;
+    // Score = letters each player brought to the grid.
     const counts = new Map();
     for (const uid of Object.keys(this.room?.members || {})) counts.set(uid, 0);
-    for (const f of Object.values(this.found)) counts.set(f.u, (counts.get(f.u) || 0) + 1);
+    if (this.model?.mode === 'paper') {
+      for (const c of Object.values(this.cells)) counts.set(c.u, (counts.get(c.u) || 0) + 1);
+    } else if (this.owner) {
+      for (const u of this.owner.values()) counts.set(u, (counts.get(u) || 0) + 1);
+    }
     const rows = [...counts.entries()]
       .map(([uid, n]) => ({ uid, n, p: player(uid, () => this.refreshAll()) }))
       .filter((x) => x.p)
@@ -625,7 +713,15 @@ class Game {
     const prog = $('#progress');
     if (prog && this.model) {
       const lv = LEVELS[this.model.level]?.label || '';
-      prog.textContent = `${Object.keys(this.found).length} / ${this.model.words.length} mots trouvés · ${lv}`;
+      const m = this.model;
+      if (m.mode === 'paper') {
+        const total = [...m.cell.values()].filter((x) => x.type === 'L').length;
+        const filled = [...m.cell.keys()].filter((k) => m.cell.get(k).type === 'L' && this.letterAt(k).ch).length;
+        const state = this.check === 'ok' ? ' · Grille juste !' : this.check === 'errors' ? ' · Pleine, mais des erreurs' : '';
+        prog.textContent = `${filled} / ${total} cases remplies · ${lv} · comme sur papier${state}`;
+      } else {
+        prog.textContent = `${Object.keys(this.found).length} / ${m.words.length} mots trouvés · ${lv} · validation mot par mot`;
+      }
     }
   }
 
@@ -637,13 +733,13 @@ class Game {
       return;
     }
     const w = this.model.words[this.sel.w];
-    const f = this.found[this.sel.w];
+    const f = this.model.mode === 'paper' ? null : this.found[this.sel.w];
     const who = f ? player(f.u, () => {}) : null;
     bar.replaceChildren(
       el('span', { class: `dirtag ${w.d}`, text: w.d === 'h' ? '→' : '↓' }),
       el('span', { class: 'cq', text: w.q }),
       el('span', { class: 'muted small', text: `${w.l} lettres` }),
-      who ? el('span', { class: 'chip' }, el('span', { class: 'dot', style: `background:${who.c}` }), el('span', { text: `trouvé par ${who.n}` })) : null,
+      ...(who ? [el('span', { class: 'chip' }, el('span', { class: 'dot', style: `background:${who.c}` }), el('span', { text: `trouvé par ${who.n}` }))] : []),
     );
   }
 
@@ -723,7 +819,7 @@ class Game {
     }
     if (k === '⌫') {
       let key = this.sel.k;
-      if (this.locked(key) || !this.drafts[key]) {
+      if (this.locked(key) || !this.letterAt(key).ch) {
         for (let p = pos - 1; p >= 0; p--) {
           if (!this.locked(w.keys[p])) {
             key = w.keys[p];
@@ -731,10 +827,7 @@ class Game {
           }
         }
       }
-      if (!this.locked(key)) {
-        delete this.drafts[key];
-        this.saveDrafts();
-      }
+      if (!this.locked(key)) this.setLetter(key, null);
       this.select(this.sel.w, key);
       return;
     }
@@ -742,13 +835,28 @@ class Game {
     while (pos < w.keys.length && this.locked(w.keys[pos])) pos++;
     if (pos >= w.keys.length) return;
     const key = w.keys[pos];
-    this.drafts[key] = ch;
-    this.saveDrafts();
-    this.refreshCell(key);
-    this.checkWords(key);
+    this.setLetter(key, ch);
+    if (this.model.mode !== 'paper') this.checkWords(key);
     let next = pos + 1;
     while (next < w.keys.length && this.locked(w.keys[next])) next++;
     this.select(this.sel.w, w.keys[Math.min(next, w.keys.length - 1)] ?? key);
+  }
+
+  /** Write a letter (or erase it with null): local draft, or shared in paper mode. */
+  setLetter(key, ch) {
+    if (this.model.mode === 'paper') {
+      const k = key.replace(',', '_');
+      if (ch) this.cells[k] = { l: ch, u: S.user.uid };
+      else delete this.cells[k];
+      DB.writeCell(this.roomId, this.model.id, k, ch, S.user.uid).catch(() => toast('Lettre non enregistrée.', 'bad'));
+      this.refreshCell(key);
+      this.renderScores();
+      return;
+    }
+    if (ch) this.drafts[key] = ch;
+    else delete this.drafts[key];
+    this.saveDrafts();
+    this.refreshCell(key);
   }
 
   /** When a word through `key` is complete, ask the server if it is right. */
@@ -809,7 +917,7 @@ function buildModel(g) {
     const [r, c, ch] = part.split(',');
     givens.set(`${r},${c}`, ch);
   }
-  return { id: g.id, rows: g.rows, cols: g.cols, level: g.level, words, cell, givens };
+  return { id: g.id, rows: g.rows, cols: g.cols, level: g.level, mode: g.mode || 'instant', hash: g.hash, salt: g.salt, words, cell, givens };
 }
 
 /** On-screen keyboard (AZERTY). Shown on touch screens by the CSS. */

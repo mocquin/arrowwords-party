@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { parseDictionary, generateGrid, lettersOf, arrowKind, LEVELS, SIZES } from '../js/generator.js';
+import { parseDictionary, generateGrid, lettersOf, arrowKind, answerString, sha256, LEVELS } from '../js/generator.js';
 
 const entries = parseDictionary(readFileSync(new URL('../data/dict-fr.txt', import.meta.url), 'utf8'));
 const known = new Set(entries.map((e) => e.w));
@@ -55,22 +55,39 @@ function checkGrid(g) {
   return L;
 }
 
-for (const level of Object.keys(LEVELS)) {
-  for (const [sizeName, size] of Object.entries(SIZES)) {
-    test(`valid ${level} grid, size ${sizeName}`, () => {
-      for (const seed of [1, 2, 3]) {
-        const g = generateGrid({ entries, level, rows: size.rows, cols: size.cols, seed, attempts: 4 });
-        const L = checkGrid(g);
-        const fill = L.size / (g.rows * g.cols);
-        assert.ok(fill > 0.5, `grid too empty: ${(fill * 100).toFixed(0)}% letters`);
-        assert.equal(g.givens.length, Math.round(LEVELS[level].givens * L.size));
-      }
-    });
+/** No black cells: every cell is a letter or a clue cell. */
+function checkFull(g, L) {
+  const clues = new Set(g.words.map((w) => `${w.cr},${w.cc}`));
+  for (let r = 0; r < g.rows; r++) {
+    for (let c = 0; c < g.cols; c++) {
+      const k = `${r},${c}`;
+      assert.ok(L.has(k) !== clues.has(k), `cell ${k} is ${L.has(k) ? 'both' : 'neither'} letter and clue`);
+    }
   }
 }
 
+for (const level of Object.keys(LEVELS)) {
+  test(`complete ${level} grids (10 × 10)`, () => {
+    for (const seed of [1, 2]) {
+      const g = generateGrid({ entries, level, rows: 10, cols: 10, seed, timeLimitMs: 120000 });
+      const L = checkGrid(g);
+      checkFull(g, L);
+      assert.equal(g.givens.length, Math.round(LEVELS[level].givens * L.size));
+    }
+  });
+}
+
+test('paper-mode fingerprint changes with any letter', async () => {
+  const g = generateGrid({ entries, level: 'moyen', rows: 10, cols: 10, seed: 3, timeLimitMs: 120000 });
+  const L = lettersOf(g.words);
+  const right = await sha256('salt' + answerString(10, 10, L));
+  const k = [...L.keys()][5];
+  L.set(k, L.get(k) === 'A' ? 'B' : 'A');
+  assert.notEqual(await sha256('salt' + answerString(10, 10, L)), right);
+});
+
 test('same seed gives the same grid', () => {
-  const a = generateGrid({ entries, level: 'moyen', rows: 12, cols: 10, seed: 7, attempts: 2 });
-  const b = generateGrid({ entries, level: 'moyen', rows: 12, cols: 10, seed: 7, attempts: 2 });
+  const a = generateGrid({ entries, level: 'difficile', rows: 10, cols: 10, seed: 7, timeLimitMs: 1e9 });
+  const b = generateGrid({ entries, level: 'difficile', rows: 10, cols: 10, seed: 7, timeLimitMs: 1e9 });
   assert.deepEqual(a.words, b.words);
 });

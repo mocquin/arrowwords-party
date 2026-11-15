@@ -56,6 +56,21 @@
         ".write": "auth != null && ((!data.exists() && newData.val() === auth.uid) || (data.val() === auth.uid && !newData.exists()) || auth.uid === '__ADMIN_UID__')",
         ".validate": "newData.isString() && newData.parent().parent().child('players').child(newData.val()).child('n').val().toLowerCase() === $key"
       }
+    },
+    "cells": {
+      ".write": "auth != null && auth.uid === '__ADMIN_UID__'",
+      "$room": {
+        ".read": "auth != null",
+        "$grid": {
+          "$key": {
+            ".write": "auth != null && root.child('rooms').child($room).child('members').child(auth.uid).exists() && $grid === root.child('rooms').child($room).child('grid').child('id').val() && root.child('rooms').child($room).child('grid').child('mode').val() === 'paper'",
+            ".validate": "$key.matches(/^[0-9]{1,2}_[0-9]{1,2}$/) && newData.hasChildren(['l', 'u', 't']) && newData.child('l').isString() && newData.child('l').val().matches(/^[A-Z]$/) && newData.child('u').val() === auth.uid && newData.child('t').val() === now",
+            "$other": {
+              ".validate": "$other === 'l' || $other === 'u' || $other === 't'"
+            }
+          }
+        }
+      }
     }
   }
 }

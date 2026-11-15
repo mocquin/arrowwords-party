@@ -7,6 +7,8 @@
 //   secret/{room}               {g: gridId, w: {idx: ANSWER}} nobody can read it;
 //                               the rules compare claims against it
 //   found/{room}/{grid}/{idx}   {u: uid, w: ANSWER, t: time} written once
+//   cells/{room}/{grid}/{r_c}   paper mode: {l: letter, u: uid, t: time}, shared by
+//                               all players, checked only when the grid is full
 //   players/{uid}               {n: name, c: color}
 //   names/{lowercase name}      uid (one name per player, no duplicates)
 
@@ -183,6 +185,7 @@ export async function deleteRoom(id) {
     [`roomIndex/${id}`]: null,
     [`secret/${id}`]: null,
     [`found/${id}`]: null,
+    [`cells/${id}`]: null,
   });
 }
 
@@ -220,7 +223,12 @@ export async function publishGrid(roomId, grid) {
     createdAt: serverTimestamp(),
     words: grid.words.map((x) => ({ r: x.r, c: x.c, d: x.d, l: x.w.length, cr: x.cr, cc: x.cc, q: x.q })),
     givens: grid.givens.map(([r, c]) => `${r},${c},${grid.letters.get(`${r},${c}`)}`).join(';'),
+    mode: grid.mode || 'instant',
   };
+  if (pub.mode === 'paper') {
+    pub.salt = grid.salt;
+    pub.hash = grid.hash;
+  }
   const answers = {};
   grid.words.forEach((x, i) => {
     answers[i] = x.w;
@@ -229,6 +237,7 @@ export async function publishGrid(roomId, grid) {
     [`rooms/${roomId}/grid`]: pub,
     [`secret/${roomId}`]: { g: gridId, w: answers },
     [`found/${roomId}`]: null,
+    [`cells/${roomId}`]: null,
   });
   return gridId;
 }
@@ -245,4 +254,15 @@ export async function claimWord(roomId, gridId, idx, word, uid) {
   } catch {
     return false;
   }
+}
+
+// --- paper mode ----------------------------------------------------------------
+
+export function watchCells(roomId, gridId, cb) {
+  return onValue(ref(db, `cells/${roomId}/${gridId}`), (s) => cb(s.val() || {}));
+}
+
+/** Write one shared letter (or erase it with null). Key is "r_c". */
+export async function writeCell(roomId, gridId, key, letter, uid) {
+  await set(ref(db, `cells/${roomId}/${gridId}/${key}`), letter ? { l: letter, u: uid, t: serverTimestamp() } : null);
 }

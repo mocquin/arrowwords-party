@@ -6,7 +6,9 @@ A French arrow-word puzzle ("mots fléchés") that several people fill in togeth
 - When someone finds a word, its boxes turn that player's color on every screen.
 - The organizer creates as many games as they like, one link per group of friends.
   From any game, the organizer can start a new grid and choose a difficulty
-  (Facile, Moyen, Difficile) and a size (15 × 20 or 10 × 12).
+  (Facile, Moyen, Difficile), a size (10 × 10, 10 × 14, 12 × 16) and how answers are checked:
+  word by word, or only at the end "like on paper".
+- Grids are complete: every box is a letter or a definition, no black boxes.
 
 Site: **https://mocquin.github.io/arrowwords-party/**
 Organizer space: **https://mocquin.github.io/arrowwords-party/?orga=1**
