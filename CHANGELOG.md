@@ -1,5 +1,8 @@
 # Change log
 
+## 2026-11-15 — Site connected to Firebase
+- The site now uses the live Firebase project.
+
 ## 2026-11-15 — First version
 - Shared French arrow-word grid, live for every player, with each found word in its finder's color.
 - No password: a name and a color per player, unique names.
