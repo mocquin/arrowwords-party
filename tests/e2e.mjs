@@ -40,7 +40,12 @@ try {
   org.on('pageerror', (e) => errors.push(`org: ${e.message}`));
   org.on('console', (m) => m.type() === 'error' && errors.push(`org console: ${m.text()}`));
   await fetch(`http://127.0.0.1:9000/.json?ns=${NS}`, { method: 'DELETE', headers: { Authorization: 'Bearer owner' } });
-  await setRules('__nobody__'); // the emulator starts with open rules
+  // Same state as a new Firebase project in "locked mode": everything refused.
+  await fetch(`http://127.0.0.1:9000/.settings/rules.json?ns=${NS}`, {
+    method: 'PUT',
+    headers: { Authorization: 'Bearer owner' },
+    body: JSON.stringify({ rules: { '.read': false, '.write': false } }),
+  });
   await org.goto(`${BASE}?orga=1&emu=1`);
   await org.getByText('Dernière étape de configuration').waitFor();
   await org.screenshot({ path: `${shots}01-setup.png` });

@@ -1,5 +1,8 @@
 # Change log
 
+## 2026-11-15 — First sign-in fix
+- The organizer page shows the rules to paste before reading anything (it got "permission denied" on a new Firebase project).
+
 ## 2026-11-15 — Organizer page fix
 - The organizer page goes straight to Google sign-in, without the anonymous sign-in.
 - Error pages now show the exact error code.

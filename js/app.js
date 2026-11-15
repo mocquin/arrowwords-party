@@ -239,13 +239,13 @@ async function organizerPage() {
     return;
   }
   S.organizer = await DB.checkOrganizer();
-  S.profile = await DB.getPlayer(S.user.uid);
-  renderMe(() => organizerPage());
-
   if (!S.organizer) {
+    // Rules not pasted yet: the database refuses every read, so show the setup first.
     view(await setupPanel());
     return;
   }
+  S.profile = await DB.getPlayer(S.user.uid);
+  renderMe(() => organizerPage());
 
   const list = el('ul', { class: 'rooms' });
   const title = el('input', { placeholder: 'Nom de la partie (ex. Famille)', maxlength: 40 });
