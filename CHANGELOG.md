@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-11-15 — Organizer page fix
+- The organizer page goes straight to Google sign-in, without the anonymous sign-in.
+- Error pages now show the exact error code.
+
 ## 2026-11-15 — Site connected to Firebase
 - The site now uses the live Firebase project.
 

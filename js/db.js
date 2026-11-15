@@ -78,6 +78,16 @@ export function ensureUser() {
   });
 }
 
+/** Resolves with the signed-in user, or null. Never signs in. */
+export function currentAuth() {
+  return new Promise((resolve) => {
+    const stop = onAuthStateChanged(auth, (user) => {
+      stop();
+      resolve(user);
+    });
+  });
+}
+
 /** Organizer sign-in with a Google account (anonymous in emulator mode). */
 export async function organizerSignIn() {
   if (emulator) return ensureUser();

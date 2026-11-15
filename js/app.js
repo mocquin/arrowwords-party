@@ -88,7 +88,11 @@ async function main() {
     else await homePage();
   } catch (e) {
     console.error(e);
-    view(el('h1', {}, 'Oups'), el('p', {}, 'Un problème est survenu. Rechargez la page.'));
+    view(
+      el('h1', {}, 'Oups'),
+      el('p', {}, 'Un problème est survenu. Rechargez la page.'),
+      el('p', { class: 'muted small' }, 'Détail : ', el('code', { text: String(e?.code || e?.message || e) })),
+    );
   }
 }
 
@@ -211,12 +215,9 @@ function player(uid, onChange) {
 // --- organizer ------------------------------------------------------------------
 
 async function organizerPage() {
-  S.user = await DB.ensureUser();
-  if (DB.isEmulator() || !S.user.isAnonymous) S.organizer = await DB.checkOrganizer();
-  S.profile = await DB.getPlayer(S.user.uid);
-  renderMe(() => organizerPage());
-
-  if (!DB.isEmulator() && S.user.isAnonymous) {
+  // The organizer signs in with Google: no anonymous sign-in on this page.
+  S.user = DB.isEmulator() ? await DB.ensureUser() : await DB.currentAuth();
+  if (!DB.isEmulator() && (!S.user || S.user.isAnonymous)) {
     view(
       el('section', { class: 'card narrow' },
         el('h1', {}, 'Espace organisateur'),
@@ -229,7 +230,7 @@ async function organizerPage() {
               location.reload();
             } catch (e) {
               console.error(e);
-              toast('Connexion annulée ou refusée.', 'bad');
+              toast(`Connexion refusée (${e.code || e.message}).`, 'bad');
             }
           },
         }, 'Se connecter avec Google'),
@@ -237,6 +238,9 @@ async function organizerPage() {
     );
     return;
   }
+  S.organizer = await DB.checkOrganizer();
+  S.profile = await DB.getPlayer(S.user.uid);
+  renderMe(() => organizerPage());
 
   if (!S.organizer) {
     view(await setupPanel());
