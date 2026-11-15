@@ -1,0 +1,17 @@
+{
+  "name": "arrowwords-party",
+  "private": true,
+  "type": "module",
+  "description": "Mots fléchés partagés en temps réel. Site statique (GitHub Pages) + Firebase Realtime Database.",
+  "scripts": {
+    "build:vendor": "esbuild tools/firebase-entry.js --bundle --format=esm --minify --target=es2020 --legal-comments=eof --outfile=vendor/firebase.js",
+    "test:generator": "node --test tests/generator.test.mjs",
+    "test:rules": "firebase emulators:exec --only database,auth --project demo-arrowwords \"node --test tests/rules.test.mjs\"",
+    "test:e2e": "firebase emulators:exec --only database,auth --project demo-arrowwords \"node tests/e2e.mjs\""
+  },
+  "devDependencies": {
+    "esbuild": "0.24.2",
+    "firebase": "10.12.2",
+    "firebase-tools": "14.4.0"
+  }
+}

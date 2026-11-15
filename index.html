@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+        script-src 'self' https://apis.google.com https://*.firebaseio.com https://*.firebasedatabase.app;
+        connect-src 'self' https://*.googleapis.com https://*.firebaseio.com wss://*.firebaseio.com https://*.firebasedatabase.app wss://*.firebasedatabase.app http://127.0.0.1:9000 ws://127.0.0.1:9000 http://127.0.0.1:9099;
+        frame-src https://*.firebaseapp.com https://*.firebaseio.com https://*.firebasedatabase.app https://accounts.google.com;
+        img-src 'self' data: https://*.googleusercontent.com;
+        style-src 'self' 'unsafe-inline';
+        base-uri 'none';
+        form-action 'self';
+        object-src 'none'"
+    />
+    <title>Mots fléchés entre amis</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23345'/%3E%3Cpath d='M4 5h6l-2-2M10 5l-2 2M5 9v4l2-2M5 13l-2-2' stroke='%23fff' fill='none' stroke-width='1.4'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="./">Mots fléchés <span>entre amis</span></a>
+      <div id="me" class="me"></div>
+    </header>
+    <main id="view" class="view">
+      <p class="muted">Chargement…</p>
+    </main>
+    <footer class="foot">
+      <a id="orga-link" href="?orga=1">Espace organisateur</a>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <dialog id="profile-dialog" class="dialog">
+      <form id="profile-form" method="dialog">
+        <h2>Qui joue ?</h2>
+        <label class="field">
+          <span>Ton nom</span>
+          <input id="profile-name" name="name" maxlength="20" autocomplete="nickname" required />
+        </label>
+        <fieldset class="field">
+          <legend>Ta couleur</legend>
+          <div id="profile-colors" class="swatches"></div>
+        </fieldset>
+        <p id="profile-error" class="error" hidden></p>
+        <div class="row end">
+          <button id="profile-cancel" type="button" class="ghost">Annuler</button>
+          <button type="submit" class="primary">C'est parti</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

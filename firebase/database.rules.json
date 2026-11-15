@@ -1,0 +1,61 @@
+{
+  "rules": {
+    "roomIndex": {
+      ".read": "auth != null && auth.uid === '__ADMIN_UID__'",
+      ".write": "auth != null && auth.uid === '__ADMIN_UID__'"
+    },
+    "rooms": {
+      ".write": "auth != null && auth.uid === '__ADMIN_UID__'",
+      "$room": {
+        ".read": "auth != null",
+        "members": {
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid && root.child('rooms').child($room).child('title').exists()",
+            ".validate": "newData.val() === true"
+          }
+        }
+      }
+    },
+    "secret": {
+      ".write": "auth != null && auth.uid === '__ADMIN_UID__'"
+    },
+    "found": {
+      ".write": "auth != null && auth.uid === '__ADMIN_UID__'",
+      "$room": {
+        ".read": "auth != null",
+        "$grid": {
+          "$idx": {
+            ".write": "auth != null && !data.exists() && newData.exists()",
+            ".validate": "newData.hasChildren(['u', 'w', 't']) && newData.child('u').val() === auth.uid && $grid === root.child('secret').child($room).child('g').val() && newData.child('w').val() === root.child('secret').child($room).child('w').child($idx).val() && newData.child('t').val() === now && root.child('players').child(auth.uid).exists() && root.child('rooms').child($room).child('members').child(auth.uid).exists()",
+            "$other": {
+              ".validate": "$other === 'u' || $other === 'w' || $other === 't'"
+            }
+          }
+        }
+      }
+    },
+    "players": {
+      "$uid": {
+        ".read": "auth != null",
+        ".write": "auth != null && (auth.uid === $uid || auth.uid === '__ADMIN_UID__')",
+        ".validate": "newData.hasChildren(['n', 'c']) && newData.parent().parent().child('names').child(newData.child('n').val().toLowerCase()).val() === $uid",
+        "n": {
+          ".validate": "newData.isString() && newData.val().matches(/^[0-9A-Za-zÀ-ÖØ-öø-ÿ_'!?-]([0-9A-Za-zÀ-ÖØ-öø-ÿ _'!?-]{0,18}[0-9A-Za-zÀ-ÖØ-öø-ÿ_'!?-])?$/)"
+        },
+        "c": {
+          ".validate": "newData.isString() && newData.val().matches(/^#[0-9a-f]{6}$/)"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "names": {
+      "$key": {
+        ".read": "auth != null",
+        ".write": "auth != null && ((!data.exists() && newData.val() === auth.uid) || (data.val() === auth.uid && !newData.exists()) || auth.uid === '__ADMIN_UID__')",
+        ".validate": "newData.isString() && newData.parent().parent().child('players').child(newData.val()).child('n').val().toLowerCase() === $key"
+      }
+    }
+  }
+}

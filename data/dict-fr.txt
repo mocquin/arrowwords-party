@@ -1,0 +1,1865 @@
+# Dictionnaire des mots fléchés.
+# Format : MOT|niveau|définition facile|définition plus difficile|...
+# niveau : 1 = mot courant, 2 = moins courant, 3 = mot rare ou de cruciverbiste.
+# Les accents sont retirés dans la grille (convention des mots fléchés).
+#
+# --- 2 lettres ---
+AS|1|Carte maîtresse|Champion
+AI|2|Paresseux|Mammifère lent
+AN|1|Douze mois|Unité de temps
+BA|2|Bonne action|Geste scout
+BU|1|Avalé|A été absorbé
+CA|1|Pronom démonstratif|Le ça des psys
+CE|1|Démonstratif|Avant un nom masculin
+CI|2|Ici, en bref|Adverbe de lieu
+DE|1|Petit cube à jouer|Il a six faces
+DO|1|Première note|Note de musique
+DU|1|Article partitif|Contraction de « de le »
+EH|2|Interjection|Pour interpeller
+EN|1|Préposition|Pronom adverbial
+ES|2|Tu l'es|Expert en
+ET|1|Conjonction|Pour additionner
+EU|1|Possédé|Participe d'avoir
+GO|2|Jeu japonais|Tout de go
+HA|2|Hectare abrégé|Cri de surprise
+IL|1|Pronom masculin|Lui
+JE|1|Moi qui parle|Première personne
+KO|2|Mis au tapis|Assommé
+LA|1|Note de musique|Article féminin
+LE|1|Article masculin|Pronom
+LU|1|Parcouru des yeux|Déchiffré
+MA|1|Possessif féminin|À moi
+ME|1|Pronom personnel|Moi
+MI|1|Note de musique|À moitié
+MU|3|Lettre grecque|Micro
+NA|3|Symbole du sodium|Enfantin refus
+NE|1|Négation|Venu au monde
+NI|1|Conjonction négative|Ni oui ni non
+NU|1|Sans vêtement|Dépouillé
+ON|1|Pronom indéfini|Quelqu'un
+OR|1|Métal précieux|Conjonction
+OS|1|Squelette en pièces|Le chien le ronge
+OU|1|Conjonction|Ceci ___ cela
+PI|2|Nombre 3,14|Lettre grecque
+PU|1|A été capable|Participe de pouvoir
+RE|1|Note de musique|Après do
+RI|1|S'est amusé|A souri fort
+SA|1|Possessif|À elle
+SE|1|Pronom réfléchi|Soi
+SI|1|Note de musique|Condition
+SU|1|Connu|Appris par cœur
+TA|1|Possessif|À toi
+TE|1|Pronom personnel|Toi
+TU|1|Toi qui lis|Gardé secret
+UN|1|Premier chiffre|Unité
+VA|1|Bouge !|Il se déplace
+VU|1|Aperçu|Regardé
+XI|3|Lettre grecque|Lettre de 14
+OH|1|Interjection|Surprise brève
+AH|1|Exclamation|Cri de joie
+BE|3|Symbole du béryllium
+FA|1|Note de musique|Après mi
+UT|3|Ancien do|Note d'autrefois
+OC|3|Langue du sud|Langue d'___
+AU|2|Contraction|Symbole de l'or
+DA|3|Oui russe|Approbation slave
+LI|3|Mesure chinoise|Unité de distance
+CD|2|Disque laser|Galette musicale
+OK|1|D'accord|Ça marche
+EX|1|Ancien conjoint|Ancien partenaire
+IN|2|À la mode|Branché
+UV|2|Rayons bronzants|Ultraviolets
+TV|2|Télé|Petit écran
+ZOO|1|Parc aux animaux|Ménagerie
+# --- 3 lettres ---
+ABC|2|Alphabet|Les bases
+AIL|1|Condiment de Provence|Gousse odorante
+AIR|1|On le respire|Mélodie
+AIE|1|Cri de douleur|Ouille !
+AME|1|Esprit|Principe vital
+AMI|1|Copain|Camarade
+ANE|1|Baudet|Grison
+API|3|Petite pomme|Interface logicielle
+ARC|1|Il lance des flèches|Courbe
+ART|1|Peinture ou musique|Talent
+AXE|1|Pivot|Ligne de symétrie
+BAC|1|Examen de fin de lycée|Bateau plat
+BAL|1|Soirée dansante|On y valse
+BAR|1|Café|Poisson
+BAS|1|Pas haut|Chaussette fine
+BEC|1|Bouche d'oiseau|Clapet
+BEL|2|Joli|Unité de bruit
+BIO|1|Sans pesticides|Écologique
+BLE|1|Céréale|Il fait le pain
+BOA|1|Gros serpent|Écharpe à plumes
+BOL|1|Récipient du petit-déjeuner|Chance
+BON|1|Délicieux|Coupon
+BOT|2|Pied ___|Logiciel automatique
+BUS|1|Transport en commun|Autocar urbain
+BUT|1|Objectif|Il fait gagner au foot
+CAR|1|Gros bus|Parce que
+CEP|2|Pied de vigne|Champignon
+CES|1|Démonstratif pluriel|Ceux-là
+CIL|1|Poil de paupière|Il bat
+CLE|1|Elle ouvre la porte|Solution
+COL|1|Passage en montagne|Partie de chemise
+COQ|1|Il chante à l'aube|Emblème gaulois
+COR|1|Instrument à vent|Durillon au pied
+COU|1|Il porte la tête|Encolure
+CRI|1|Hurlement|Appel fort
+CRU|1|Pas cuit|Vin de terroir
+CUL|2|Fond de bouteille|Postérieur
+DES|1|Article pluriel|Ils roulent au jeu
+DIT|1|Prononcé|Fable courte
+DON|1|Cadeau|Talent naturel
+DOS|1|Il porte le sac|Verso
+DOT|2|Apport de la mariée|Bien de mariage
+DUC|2|Noble|Hibou
+DUR|1|Pas mou|Pénible
+EAU|1|Elle coule du robinet|H2O
+ECU|2|Bouclier|Ancienne monnaie
+ELU|1|Choisi|Député
+EMU|1|Touché|Bouleversé
+ERE|2|Époque|Période géologique
+ETE|1|Saison chaude|A existé
+EUE|3|Possédée|Participe féminin
+EVE|2|Première femme|Compagne d'Adam
+FAN|1|Admirateur|Groupie
+FEE|1|Elle a une baguette|Magicienne
+FER|1|Métal|Pour repasser
+FIL|1|Pour coudre|Câble
+FIN|1|Bout|Mince
+FOI|1|Croyance|Confiance
+FOU|1|Pièce d'échecs|Dément
+GAI|1|Joyeux|Enjoué
+GEL|1|Froid qui fige|Produit coiffant
+GIN|2|Alcool de genièvre|Avec le tonic
+GUE|2|Passage dans la rivière|On y traverse à pied
+HUE|2|Cri de charretier|À droite !
+ICI|1|En ce lieu|Pas là-bas
+IDE|3|Poisson rouge|Suffixe chimique
+ILE|1|Terre entourée d'eau|Atoll
+IRE|3|Colère|Courroux
+JEU|1|Partie|Divertissement
+JUS|1|Boisson de fruits|Courant électrique
+LAC|1|Étendue d'eau|Léman par exemple
+LAI|3|Poème médiéval|Frère convers
+LIS|1|Fleur royale|Parcours le livre
+LIT|1|Meuble pour dormir|Fond de rivière
+LOI|1|Règle votée|Code
+LOT|1|Part|Rivière du sud-ouest
+LUE|2|Parcourue|Déchiffrée
+LUI|1|Pronom masculin|Il
+LUT|3|Mastic|Il parcourut
+MAI|1|Mois du muguet|Cinquième mois
+MAL|1|Douleur|Le contraire du bien
+MER|1|Grande étendue salée|Océan
+MIE|1|Intérieur du pain|Amie, jadis
+MIL|2|Céréale africaine
+MOI|1|Je|Ego
+MOT|1|Ensemble de lettres|Petit message
+MUR|1|Paroi|Cloison
+NEZ|1|Organe de l'odorat|Pif
+NID|1|Maison d'oiseau|Foyer
+NOM|1|Patronyme|Appellation
+NON|1|Refus|Négation
+NUE|2|Sans habit|Nuage
+NUL|1|Zéro|Sans valeur
+OIE|1|Volaille qui cacarde|Jeu de l'___
+ONU|2|Nations unies|Organisation mondiale
+OSE|1|Audacieux|Sucre simple
+OUI|1|Accord|Approbation
+OUT|2|Hors jeu|Dehors au tennis
+PAF|2|Bruit de coup|Ivre
+PAN|2|Morceau de mur|Bruit de tir
+PAR|1|Préposition|Score au golf
+PAS|1|Enjambée|Négation
+PEU|1|Pas beaucoup|Guère
+PIC|1|Sommet|Oiseau qui frappe
+PIE|1|Oiseau bavard|Noir et blanc
+PIN|1|Conifère|Résineux
+PIS|2|Mamelle|Pire
+PLI|1|Fronce|Lettre
+PNEU|1|Il roule|Bandage gonflé
+POT|1|Récipient|Verre entre amis
+POU|1|Parasite|Il gratte
+PRE|1|Champ|Herbage
+PUR|1|Sans mélange|Innocent
+RAS|1|Coupé court|Rien à signaler
+RAT|1|Rongeur|Avare
+RIZ|1|Céréale asiatique|Paddy
+ROI|1|Monarque|Pièce d'échecs
+RUE|1|Voie urbaine|Artère
+SAC|1|Cabas|Pillage
+SEC|1|Pas mouillé|Aride
+SEL|1|Il sale|Piquant
+SET|2|Manche au tennis|Napperon
+SEUL|1|Isolé|Unique
+SIX|1|Chiffre|Après cinq
+SKI|1|Sport de neige|Planche longue
+SOC|3|Lame de charrue|Fer de labour
+SOI|1|Pronom réfléchi|Chez ___
+SOL|1|Terre ferme|Note de musique
+SON|1|Bruit|Enveloppe du blé
+SUD|1|Midi|Point cardinal
+SUR|1|Dessus|Aigre
+TAS|1|Pile|Monceau
+TEE|3|Support de golf|Cheville de golfeur
+THE|1|Boisson chaude|Infusion de feuilles
+TIC|1|Manie|Geste répété
+TIR|1|Coup de feu|Frappe au but
+TOI|1|Pronom|Tu
+TOT|1|De bonne heure|Pas tard
+TRI|1|Classement|Sélection
+TUE|2|Abattu|Supprimé
+UNE|1|Article féminin|Première page
+USA|2|États-Unis|Pays de l'Oncle Sam
+USE|1|Abîmé|Râpé
+VAL|1|Creux entre deux monts|Combe
+VER|1|Il vit dans la terre|Lombric
+VIE|1|Existence|Biographie
+VIF|1|Rapide|Éveillé
+VIN|1|Rouge ou blanc|Jus fermenté
+VOL|1|Larcin|Trajet d'avion
+VUE|1|Panorama|Vision
+YAK|2|Bœuf du Tibet|Bovin à poils longs
+ZEN|1|Calme|Bouddhisme japonais
+ZOOM|1|Objectif photo|Gros plan
+OSA|2|Se risqua|Tenta
+ONT|1|Ils possèdent|Possèdent
+EST|1|Point cardinal|Orient
+OUEST|1|Point cardinal|Couchant
+NORD|1|Point cardinal|Septentrion
+ARA|2|Perroquet|Oiseau coloré
+AGE|1|Nombre d'années|Époque
+ANS|1|Années|Printemps
+ARE|2|Cent mètres carrés|Surface agraire
+ASSE|3|Petite hache|Outil de couvreur
+ATE|3|Déesse de l'erreur|Furie grecque
+AVE|3|Prière|Salut latin
+BEE|2|Ouverte, la bouche|Ébahie
+BIS|1|Encore !|Une seconde fois
+BRU|2|Belle-fille|Épouse du fils
+CAP|1|Pointe de terre|Direction
+CIS|3|Préfixe de position|En deçà
+CUT|3|Coupé, au cinéma|Montage sec
+DIX|1|Chiffre rond|Après neuf
+DUE|2|Méritée|Obligée
+ECO|2|Préfixe vert
+EGO|2|Le moi|Amour-propre
+ELAN|1|Mouvement|Cerf du Nord
+EMIR|2|Prince arabe|Chef musulman
+EPI|1|Tête de blé|Mèche rebelle
+ESSE|3|Crochet en S|Cheville d'essieu
+ETAT|1|Nation|Condition
+FAX|2|Télécopie|Envoi papier
+FIC|3|Verrue|Excroissance
+FUT|1|Tonneau|Était
+GAG|1|Blague|Effet comique
+GAZ|1|Fluide|Cuisinière
+GNOU|2|Antilope d'Afrique|Bœuf sauvage
+GRE|2|Volonté|Bon ___ mal ___
+HAN|3|Effort du bûcheron|Dynastie chinoise
+HEM|3|Pour appeler|Interjection discrète
+ION|2|Atome chargé|Particule
+IRA|1|Il se rendra
+JAR|3|Mâle de l'oie
+JET|1|Avion|Lancer
+KIF|3|Plaisir|Haschich
+KIR|2|Apéritif au cassis|Vin blanc cassis
+LEU|3|Monnaie roumaine|Au ___ de
+LOB|2|Balle haute|Chandelle au tennis
+LUS|2|Parcourus|Déchiffrés
+MAS|1|Maison provençale|Ferme du Midi
+MEC|2|Type|Gars
+MIN|3|Soixante secondes, en bref
+MOU|1|Pas dur|Mollasson
+MUE|2|Changement de peau|Change de voix
+NET|1|Propre|Filet au tennis
+NIE|1|Conteste|Refuse d'avouer
+NUS|1|Dévêtus|Sans habits
+ODE|2|Poème lyrique|Chant
+OIL|3|Langue du nord|Langue d'___
+OPE|3|Ouverture de mur|Trou d'échafaudage
+ORME|2|Arbre|Feuillu
+OST|3|Armée féodale|Troupe médiévale
+OTE|1|Enlève|Retire
+OUF|1|Soulagement|Enfin !
+OVE|3|Ornement en œuf|Moulure ovale
+PAL|3|Pieu|Supplice
+PAPE|1|Chef de l'Église|Souverain pontife
+PET|2|Vent|Flatulence
+PIF|2|Nez|Intuition
+PUS|2|Liquide d'infection|Humeur
+RAI|3|Musique algérienne|Rayon de roue
+RAZ|2|___ de marée|Courant breton
+REG|3|Désert de pierres|Sahara caillouteux
+RIS|2|Thymus de veau|Rires
+ROC|1|Gros caillou|Inébranlable
+ROT|2|Renvoi|Éructation
+RUT|2|Période des amours|Brame
+SAS|2|Petite pièce étanche|Tamis
+SAX|2|Instrument de jazz|Cuivre de Coltrane
+SES|1|Possessif pluriel|À lui
+SIS|3|Situé|Placé
+SOT|1|Idiot|Bête
+SOU|1|Petite pièce|Centime d'antan
+SUS|2|En plus
+TAC|2|Bruit sec|Réponse du tic
+TAN|3|Écorce de chêne
+TAU|3|Lettre grecque|Croix en T
+TEL|1|Pareil|Ainsi
+TES|1|Possessif pluriel|À toi
+TIF|3|Cheveu|Poil du crâne
+TOC|2|Imitation|Faux bijou
+TON|1|Couleur de voix|Possessif
+TUB|3|Baignoire|Grande cuve
+URNE|1|Boîte à bulletins|Vase funéraire
+USE|2|Abîmé|Fatigué
+UNI|1|Lisse|Solidaire
+VIA|2|En passant par|Par
+VIS|1|Elle se serre|Tu existes
+VIT|1|Il existe|Aperçut
+VOS|1|Possessif pluriel|À vous
+ZONE|1|Région|Secteur
+ZOU|3|Allez, ouste !|Hop !
+ZUT|1|Mince !|Juron poli
+NEF|2|Partie d'église|Navire ancien
+LEST|2|Poids d'équilibre|Ballast
+DUO|1|Paire|Chant à deux
+TRIO|1|Trois|Groupe de trois
+SEPT|1|Chiffre|Après six
+HUIT|1|Chiffre|Après sept
+NEUF|1|Tout récent|Après huit
+ONZE|1|Équipe de foot|Après dix
+DOUZE|1|Une douzaine|Après onze
+# --- 4 lettres ---
+ABRI|1|Refuge|Cabane
+ACTE|1|Action|Partie de pièce
+ADIEU|1|Au revoir définitif|Salut final
+AIDE|1|Secours|Assistant
+AIGU|2|Pointu|Accent
+AILE|1|Pour voler|Partie d'avion
+AIME|1|Adore|Chérit
+AISE|2|Confort|À l'___
+ALLER|1|Se rendre|Billet simple
+ALPE|3|Pâturage de montagne|Alpage
+AMER|1|Pas sucré|Repère côtier
+AMIE|1|Copine|Camarade
+ANGE|1|Être céleste|Chérubin
+ANSE|1|Petite baie|Poignée de panier
+ARME|1|Fusil ou épée|Moyen de défense
+ARTS|1|Beaux-___|Disciplines créatives
+ATRE|2|Foyer de cheminée|Cheminée
+AUBE|1|Lever du jour|Point du jour
+AUNE|2|Arbre des rives|Ancienne mesure
+AVEC|1|En compagnie de|Muni de
+AVIS|1|Opinion|Conseil
+AXER|2|Centrer|Orienter
+BAIE|1|Petit golfe|Petit fruit
+BAIN|1|Toilette dans l'eau|Baignade
+BANC|1|Siège public|Groupe de poissons
+BASE|1|Fondement|Camp
+BEAU|1|Joli|Il fait ___
+BETE|1|Animal|Sot
+BIEN|1|Correct|Propriété
+BISE|1|Bisou|Vent du nord
+BLEU|1|Couleur du ciel|Ecchymose
+BOIS|1|Forêt|Matériau de l'arbre
+BOND|1|Saut|Faux ___
+BORD|1|Rive|Lisière
+BOUE|1|Terre mouillée|Gadoue
+BRAS|1|Membre supérieur|Détroit
+BRUN|1|Couleur châtain|Foncé
+BUTE|2|Obstiné|Petite colline
+CAGE|1|Prison à oiseaux|Pour l'escalier
+CAPE|1|Manteau sans manches|Habit de torero
+CAVE|1|Sous-sol|Cellier
+CEPE|2|Champignon|Bolet
+CHAT|1|Félin|Messagerie
+CHEF|1|Patron|Cuisinier en toque
+CHER|1|Coûteux|Aimé
+CIEL|1|Firmament|Azur
+CIME|1|Sommet|Faîte
+CINE|1|Salle obscure|Septième art, en bref
+CLOU|1|On le plante|Attraction
+COIN|1|Angle|Lieu retiré
+CONE|1|Cornet|Forme pointue
+CORPS|1|Organisme|Anatomie
+COTE|1|Littoral|Pente
+COUP|1|Choc|Gorgée
+COUR|1|Espace devant la maison|Tribunal
+CRAN|2|Courage|Entaille
+CREME|1|Produit laitier|Fine fleur
+CRIN|2|Poil de cheval|Rembourrage
+CUBE|1|Dé|Solide à six faces
+CURE|1|Traitement|Presbytère
+DAME|1|Femme|Pièce d'échecs
+DANS|1|À l'intérieur|Préposition
+DATE|1|Jour précis|Fruit du palmier
+DENT|1|Dans la bouche|Sommet pointu
+DIRE|1|Prononcer|Affirmer
+DOUX|1|Tendre|Pas rêche
+DRAP|1|Linge de lit|Tissu de laine
+DUNE|1|Colline de sable|Relief désertique
+DURE|1|Persiste|Pas tendre
+ECHO|1|Son renvoyé|Rumeur
+ELLE|1|Pronom féminin
+EPEE|1|Arme blanche|Fleuret
+ETOILE|1|Astre|Vedette
+FACE|1|Visage|Côté de pièce
+FAIM|1|Envie de manger|Appétit
+FAIT|1|Événement|Réalisé
+FARD|2|Maquillage|Poudre
+FEMME|1|Épouse|Dame
+FETE|1|Célébration|Anniversaire
+FEUX|1|Flammes|Signalisation
+FIER|1|Orgueilleux|Content de soi
+FILE|1|Queue|Rang
+FILS|1|Garçon|Héritier
+FOIN|1|Herbe séchée|Tapage
+FOIS|1|Occasion|Une ___
+FOND|1|Le bas|Essence
+FOOT|1|Ballon rond|Sport des Bleus
+FORT|1|Costaud|Citadelle
+FOUR|1|Pour cuire|Échec théâtral
+FRAIS|1|Un peu froid|Dépenses
+FUIR|1|S'échapper|Couler
+GALA|2|Soirée chic|Fête officielle
+GANT|1|Pour la main|Mitaine
+GARE|1|Station de train|Attention !
+GATE|1|Abîmé|Choyé
+GELE|1|Glacé|Figé
+GENS|1|Personnes|Monde
+GITE|2|Abri|Logement rural
+GOUT|1|Saveur|Sens
+GRIS|1|Couleur de souris|Ivre
+GROS|1|Épais|Corpulent
+GUIDE|1|Accompagnateur|Manuel
+HALL|2|Vestibule|Entrée
+HAUT|1|En l'air|Sommet
+HIER|1|Le jour d'avant|Passé récent
+IDEE|1|Pensée|Concept
+IRIS|1|Fleur|Partie de l'œil
+JAZZ|2|Musique syncopée|Swing
+JEAN|1|Pantalon de toile|Denim
+JEUNE|1|Pas vieux|Adolescent
+JOIE|1|Bonheur|Gaieté
+JOUE|1|Partie du visage|S'amuse
+JOUR|1|Pas la nuit|Vingt-quatre heures
+JUGE|1|Magistrat|Arbitre
+JUPE|1|Vêtement féminin|Kilt
+LAIT|1|Boisson blanche|Production de vache
+LAME|1|Tranchant|Vague
+LAMPE|1|Éclairage|Lumière
+LANCE|1|Arme de chevalier|Jette
+LENT|1|Pas rapide|Traînard
+LIEN|1|Attache|Relation
+LIGNE|1|Trait|Pour pêcher
+LION|1|Roi des animaux|Signe du zodiaque
+LIRE|1|Parcourir un texte|Ancienne monnaie italienne
+LISTE|1|Énumération|Inventaire
+LOIN|1|À grande distance|Éloigné
+LONG|1|Étendu|Pas court
+LOUP|1|Canidé sauvage|Masque
+LUNE|1|Satellite de la Terre|Astre de la nuit
+MAIN|1|Cinq doigts|Paume
+MAIS|1|Céréale|Conjonction
+MALE|1|Pas femelle|Viril
+MARE|1|Petite étendue d'eau|Étang
+MASSE|1|Gros marteau|Volume
+MATIN|1|Début de journée|Aube
+MELON|1|Fruit d'été|Chapeau
+MERE|1|Maman|Génitrice
+MIEL|1|Fait par les abeilles|Doux nectar
+MINE|1|Visage|Gisement
+MODE|1|Tendance|Manière
+MOIS|1|Trente jours|Fraction d'année
+MONT|1|Sommet|Éminence
+MORT|1|Décès|Défunt
+MOTO|1|Deux-roues|Bécane
+MOUCHE|1|Insecte|Cible centrale
+MUET|1|Silencieux|Sans voix
+MULE|2|Hybride têtu|Chausson
+NAGE|1|Brasse|Natation
+NAIN|1|Tout petit|Compagnon de Blanche-Neige
+NEIGE|1|Flocons|Blanc manteau
+NIER|1|Contester|Démentir
+NOEL|1|Fête de décembre|Sapin et cadeaux
+NOIR|1|Couleur sombre|Obscur
+NOTE|1|Résultat scolaire|Do ou ré
+NUIT|1|Après le jour|Obscurité
+OISE|2|Rivière française|Département 60
+ONDE|2|Vague|Fréquence
+ONCLE|1|Frère du père|Tonton
+ORAL|1|Examen parlé|Verbal
+ORGE|2|Céréale|Pour la bière
+OSER|1|Se risquer|Avoir le culot
+OURS|1|Gros plantigrade|Bourru
+OUTIL|1|Instrument|Ustensile
+PAGE|1|Feuille de livre|Jeune noble
+PAIN|1|Baguette|Miche
+PAIR|1|Divisible par deux|Égal
+PAIX|1|Fin de guerre|Calme
+PALE|1|Blafard|Hélice
+PAPA|1|Père|Paternel
+PARC|1|Jardin public|Enclos
+PART|1|Morceau|S'en va
+PATE|1|Mélange à cuire|Spaghetti
+PEAU|1|Épiderme|Enveloppe
+PEINE|1|Chagrin|Sanction
+PELLE|1|Pour creuser|Baiser fougueux
+PERE|1|Papa|Géniteur
+PEUR|1|Frayeur|Crainte
+PIED|1|Au bout de la jambe|Base
+PIERRE|1|Caillou|Prénom de l'apôtre
+PILE|1|Batterie|Côté de pièce
+PIPE|1|Pour fumer|Bouffarde
+PISTE|1|Chemin|Trace
+PLAN|1|Carte|Projet
+PLAT|1|Mets|Sans relief
+PLEIN|1|Rempli|Complet
+PLUIE|1|Averse|Eau du ciel
+PLUME|1|Sur l'oiseau|Pour écrire
+POIL|1|Cheveu du corps|À ___
+POIS|1|Petit légume vert|Rond sur tissu
+PONT|1|Passage sur rivière|Long week-end
+PORC|1|Cochon|Viande
+PORT|1|Pour les bateaux|Allure
+POSE|1|Attitude|Installe
+POTE|2|Copain|Camarade
+POULE|1|Volaille|Pondeuse
+PRIX|1|Coût|Récompense
+PROF|1|Enseignant|Maître
+PUCE|1|Insecte sauteur|Composant électronique
+PUITS|1|Trou d'eau|Source profonde
+PURE|1|Sans mélange|Chaste
+RAGE|1|Colère|Maladie
+RAME|1|Aviron|Train de métro
+RANG|1|File|Grade
+RARE|1|Peu fréquent|Saignant
+RASE|1|Coupe court|Démolit
+RAVI|1|Enchanté|Content
+REIN|1|Organe filtrant|Lombes
+RIRE|1|S'esclaffer|Hilarité
+RIVE|1|Bord de rivière|Berge
+ROBE|1|Vêtement de femme|Pelage
+ROSE|1|Fleur|Couleur
+ROUE|1|Elle tourne|Pneu
+ROUX|1|Poil de carotte|Sauce
+SAGE|1|Raisonnable|Calme
+SAIN|1|En bonne santé|Salubre
+SALE|1|Pas propre|Crasseux
+SANG|1|Liquide rouge|Hémoglobine
+SAUT|1|Bond|Visite rapide
+SEIN|1|Poitrine|Au ___ de
+SENS|1|Direction|Signification
+SERRE|1|Abri vitré|Griffe
+SITE|1|Lieu|Page web
+SOIE|1|Tissu précieux|Fil de ver
+SOIR|1|Fin de journée|Crépuscule
+SOLE|1|Poisson plat|Corne du sabot
+SORT|1|Destin|Charme
+SOUS|1|Plus bas que|Argent
+SPORT|1|Activité physique|Discipline
+SUCRE|1|Il adoucit|Morceau blanc
+TACHE|1|Salissure|Souillure
+TAPIS|1|Sur le sol|Moquette
+TARD|1|Pas tôt|À la fin
+TARTE|1|Pâtisserie|Gifle
+TAUPE|1|Animal aveugle|Espion
+TAXI|1|Voiture avec chauffeur|Course payante
+TELE|1|Petit écran
+TEMPS|1|Météo|Durée
+TENTE|1|Abri de camping|Essaie
+TERRE|1|Planète bleue|Sol
+TETE|1|Chef|Crâne
+THON|1|Gros poisson|Poisson en boîte
+TIGRE|1|Grand félin rayé|Fauve
+TOIT|1|Couverture de maison|Abri
+TOUR|1|Promenade|Pièce d'échecs
+TOUX|1|Rhume bruyant|Quinte
+TRAIN|1|Locomotive et wagons|Allure
+TROU|1|Orifice|Creux
+TUBE|1|Succès musical|Tuyau
+TUER|1|Abattre|Supprimer
+URBAIN|1|De la ville|Citadin
+VASE|1|Pour les fleurs|Boue
+VEAU|1|Petit de la vache|Bovin
+VELO|1|Bicyclette|Deux-roues
+VENT|1|Air qui souffle|Mistral
+VERS|1|Ligne de poème|En direction de
+VERT|1|Couleur d'herbe|Pas mûr
+VIDE|1|Rien dedans|Néant
+VIEUX|1|Âgé|Ancien
+VIGNE|1|Donne le raisin|Vignoble
+VILLE|1|Cité|Agglomération
+VITE|1|Rapidement|Prestement
+VOIE|1|Chemin|Rail
+VOIX|1|Son de la gorge|Suffrage
+VRAI|1|Exact|Réel
+YEUX|1|Organes de la vue|Mirettes
+ZERO|1|Rien|Nul
+# 4 lettres plus rares, utiles pour croiser
+ALEA|3|Hasard|Risque imprévu
+ALOI|3|Qualité|De bon ___
+AMAS|2|Tas|Accumulation
+ARAS|2|Perroquets|Oiseaux bavards
+AREU|2|Babil de bébé|Gazouillis
+ARIA|3|Mélodie d'opéra|Air chanté
+ASTRE|1|Corps céleste|Étoile
+ETAI|2|Soutien|Poutre d'appui
+ETAL|2|Comptoir de boucher|Table de marché
+ETAT|1|Nation|Condition
+ETRE|1|Exister|Individu
+ETUI|1|Boîte à lunettes|Fourreau
+EURO|1|Monnaie commune|Devise
+EVIER|1|Bac de cuisine|Lavabo de cuisine
+IRES|3|Colères|Courroux
+ITEM|2|Élément|Article
+LIER|1|Attacher|Unir
+LOTO|1|Jeu de hasard|Boules numérotées
+NANA|2|Fille|Héroïne de Zola
+NEON|2|Gaz lumineux|Tube éclairant
+NOTA|3|Remarque|___ bene
+ORAL|1|Examen parlé|Verbal
+OSES|3|Sucres simples|Tu tentes
+OTER|1|Enlever|Retirer
+OVNI|1|Soucoupe volante|Objet inconnu
+RADE|2|Bassin de port|En ___
+RAIE|1|Ligne|Poisson plat
+RATE|1|Organe|Manqué
+REAL|3|Ancienne monnaie|Monnaie brésilienne
+RENE|3|Prénom de Descartes|Prénom
+RIEN|1|Néant|Pas une chose
+RITE|2|Cérémonie|Rituel
+ROTI|1|Viande au four|Cuit au four
+RUSE|1|Astuce|Stratagème
+SANS|1|Privé de|Dépourvu
+SARI|2|Robe indienne|Drapé
+SEINE|1|Fleuve parisien|Filet de pêche
+SERA|1|Futur d'être|Existera
+SIRE|2|Majesté|Monseigneur
+SOIT|1|D'accord|C'est-à-dire
+SOLO|1|Seul|Morceau en solitaire
+SURE|1|Certaine|Acide
+TARE|1|Défaut|Poids de l'emballage
+TENIR|1|Garder|Durer
+TIRE|1|Tracte|Voiture
+TOLE|2|Plaque de métal
+TRES|1|Beaucoup|Fort
+TRIE|1|Classe|Sélectionne
+UNIE|1|Lisse|Solidaire
+UNIS|1|Liés|États-___
+USER|1|Abîmer|Utiliser
+UTILE|1|Pratique|Nécessaire
+VAIN|2|Inutile|Orgueilleux
+VALSE|1|Danse à trois temps|Danse viennoise
+VERRE|1|Pour boire|Matière transparente
+VETO|2|Opposition|Refus formel
+VISA|1|Permis d'entrer|Carte bancaire
+ANERIE|2|Bêtise|Sottise
+ARETE|1|Os de poisson|Ligne de crête
+AERE|2|Ventilé|Oxygéné
+AINE|2|Premier-né|Pli de la cuisse
+ALLEE|1|Chemin bordé d'arbres|Avenue
+ALTO|2|Voix grave|Grand violon
+AMANT|2|Amoureux|Galant
+ANTRE|2|Caverne|Repaire
+ASILE|2|Refuge|Abri politique
+ATOUT|1|Avantage|Carte forte
+AVENIR|1|Futur|Lendemain
+# --- 5 lettres ---
+ABORD|1|D'___, en premier|Accès
+ACIER|1|Métal dur|Alliage de fer
+ADULTE|1|Grande personne|Majeur
+AGENT|1|Policier|Représentant
+AIMER|1|Adorer|Chérir
+ALBUM|1|Recueil de photos|Disque
+ALIEN|2|Extraterrestre|Étranger
+ALPES|1|Massif montagneux|Mont Blanc
+AMOUR|1|Tendresse|Passion
+ANCRE|1|Elle retient le bateau|Fer de marine
+ANGLE|1|Coin|Point de vue
+ANNEE|1|Douze mois|Millésime
+APPEL|1|Coup de fil|Recours
+ARBRE|1|Chêne ou hêtre|Végétal ligneux
+ARENE|1|Cirque romain|Lieu de combat
+ARGENT|1|Monnaie|Métal précieux
+ARMEE|1|Troupes|Militaires
+AROME|1|Parfum|Saveur
+ASSIS|1|Sur une chaise|Installé
+ATLAS|1|Recueil de cartes|Titan porteur
+AUTEUR|1|Écrivain|Créateur
+AUTRE|1|Différent|Pas le même
+AVION|1|Appareil volant|Aéroplane
+AVOIR|1|Posséder|Crédit
+BALLE|1|Petit ballon|Projectile
+BANDE|1|Groupe|Ruban
+BARBE|1|Poils du menton|Ennui
+BARRE|1|Gouvernail|Trait
+BATON|1|Gourdin|Canne
+BELLE|1|Jolie|Partie décisive
+BETON|1|Matériau de construction|Ciment armé
+BEURRE|1|Sur la tartine|Produit laitier
+BIERE|1|Boisson mousseuse|Cercueil
+BILLE|1|Petite boule|Bout de bois
+BLANC|1|Couleur de neige|Vide
+BLOND|1|Couleur de cheveux|Doré
+BOITE|1|Carton|Discothèque
+BOMBE|1|Engin explosif|Aérosol
+BOTTE|1|Chaussure haute|Gerbe
+BOUCHE|1|Pour manger|Orifice
+BRISE|1|Vent léger|Casse
+BROSSE|1|Pour les cheveux|Balai
+BRUIT|1|Son|Rumeur
+CABLE|1|Gros fil|Télévision payante
+CACAO|1|Pour le chocolat|Fève
+CADRE|1|Bordure de tableau|Employé
+CALME|1|Tranquille|Sérénité
+CANAL|1|Voie d'eau|Chaîne
+CANNE|1|Bâton de marche|Roseau
+CARTE|1|Plan|Menu
+CASSE|1|Brise|Fourrière
+CAUSE|1|Raison|Motif
+CENTRE|1|Milieu|Cœur
+CHAISE|1|Siège|Assise
+CHAMP|1|Terre cultivée|Domaine
+CHANT|1|Chanson|Mélodie
+CHIEN|1|Meilleur ami de l'homme|Toutou
+CHOSE|1|Objet|Truc
+CIGARE|1|Havane|Tabac roulé
+CINQ|1|Chiffre|Après quatre
+CITRON|1|Agrume jaune|Acide
+CLAIR|1|Lumineux|Évident
+CLASSE|1|Salle d'école|Élégance
+CLIENT|1|Acheteur|Habitué
+COEUR|1|Il bat|Centre
+COLLE|1|Adhésif|Question difficile
+CONTE|1|Récit merveilleux|Fable
+CORDE|1|Cordage|Fil tendu
+CORNE|1|Sur le front du taureau|Klaxon
+COUDE|1|Articulation du bras|Virage
+COUPE|1|Trophée|Taille
+COURS|1|Leçon|Avenue
+COURT|1|Pas long|Terrain de tennis
+CRABE|1|Crustacé|Il marche de côté
+CRAIE|1|Pour le tableau|Calcaire
+CRISE|1|Accès|Récession
+CROIX|1|Signe +|Supplice
+CYCLE|1|Période|Vélo
+DANSE|1|Valse ou tango|Ballet
+DEBUT|1|Commencement|Origine
+DELTA|1|Embouchure|Lettre grecque
+DESIR|1|Envie|Souhait
+DESSIN|1|Croquis|Illustration
+DETTE|1|Somme due|Dû
+DIEU|1|Divinité|Créateur
+DOIGT|1|Cinq par main|Phalange
+DOUTE|1|Incertitude|Hésitation
+DRAME|1|Tragédie|Catastrophe
+DROIT|1|Rectiligne|Justice
+ECOLE|1|Établissement scolaire|Lycée
+ECRAN|1|Moniteur|Toile de cinéma
+EGLISE|1|Lieu de culte|Paroisse
+ENCRE|1|Liquide pour écrire|Sépia
+ENFANT|1|Petit|Gamin
+ENTRE|1|Au milieu de|Pénètre
+ENVIE|1|Désir|Jalousie
+EPAULE|1|Haut du bras|Soutien
+EPICE|1|Condiment|Poivre ou safran
+ERREUR|1|Faute|Bévue
+ESPACE|1|Cosmos|Étendue
+ESSAI|1|Tentative|Point au rugby
+ETAGE|1|Niveau|Palier
+ETANG|1|Plan d'eau|Mare
+ETAPE|1|Phase|Halte
+ETUDE|1|Travail scolaire|Bureau de notaire
+EXACT|1|Juste|Précis
+FABLE|1|Récit de La Fontaine|Fiction
+FAUTE|1|Erreur|Coup franc
+FERME|1|Exploitation agricole|Solide
+FIBRE|1|Filament|Internet rapide
+FILLE|1|Enfant féminin|Demoiselle
+FINAL|1|Dernier|Ultime
+FLEUR|1|Rose ou tulipe|Élite
+FLEUVE|1|Grand cours d'eau|Loire
+FOIRE|1|Marché|Fête foraine
+FORCE|1|Puissance|Vigueur
+FORET|1|Bois|Mèche de perceuse
+FORME|1|Silhouette|Condition physique
+FOULE|1|Multitude|Masse de gens
+FRERE|1|Frangin|Moine
+FRUIT|1|Pomme ou poire|Résultat
+GARDE|1|Surveillant|Protection
+GATEAU|1|Pâtisserie|Dessert
+GENOU|1|Articulation|Rotule
+GENRE|1|Sorte|Masculin ou féminin
+GESTE|1|Mouvement|Acte
+GLACE|1|Eau gelée|Miroir
+GLOBE|1|Sphère|Terre
+GRAIN|1|Petit fruit sec|Averse
+GRAND|1|Haut|Adulte
+GRAVE|1|Sérieux|Accent
+GRUE|1|Engin de chantier|Échassier
+GUERRE|1|Conflit|Combat
+HAINE|1|Détestation|Animosité
+HERBE|1|Gazon|Verdure
+HEURE|1|Soixante minutes|Moment
+HIVER|1|Saison froide|Frimas
+HOMME|1|Être humain|Monsieur
+HONTE|1|Gêne|Opprobre
+HOTEL|1|Palace|Auberge
+HUILE|1|Corps gras|Olive pressée
+HUMOUR|1|Esprit drôle|Comique
+IMAGE|1|Illustration|Reflet
+INDEX|1|Doigt|Table des matières
+ISSUE|1|Sortie|Résultat
+JAMBE|1|Membre inférieur|Gambette
+JARDIN|1|Potager|Parc
+JAUNE|1|Couleur du soleil|Briseur de grève
+JOUET|1|Objet pour enfant|Victime
+JUSTE|1|Équitable|Exact
+LAINE|1|Toison du mouton|Pull
+LARGE|1|Pas étroit|Haute mer
+LARME|1|Pleur|Goutte
+LEGER|1|Pas lourd|Frivole
+LEVRE|1|Bord de bouche|Lippe
+LIBRE|1|Sans contrainte|Disponible
+LITRE|1|Mesure de volume
+LIVRE|1|Bouquin|Demi-kilo
+LOCAL|1|Régional|Pièce
+LOUPE|1|Verre grossissant|Rate
+LUMIERE|1|Clarté|Éclairage
+MAGIE|1|Sortilège|Illusion
+MAIRE|1|Élu municipal|Édile
+MAISON|1|Habitation|Foyer
+MAITRE|1|Instituteur|Patron
+MALIN|1|Rusé|Diable
+MANGE|1|Dévore|Avale
+MARCHE|1|Promenade|Degré
+MARDI|1|Jour de la semaine|___ gras
+MARGE|1|Bord de page|Latitude
+MARIN|1|Matelot|De la mer
+MATCH|1|Rencontre sportive|Partie
+MEDIA|2|Presse|Moyen de communication
+MERCI|1|Gratitude|Pitié
+METAL|1|Fer ou cuivre|Rock lourd
+METRE|1|Unité de longueur|Mesure
+MIDI|1|Douze heures|Sud
+MIROIR|1|Glace|Reflet
+MODELE|1|Exemple|Mannequin
+MONDE|1|Univers|Gens
+MONTRE|1|Bracelet horaire|Indique
+MORAL|1|Humeur|Éthique
+MOTEUR|1|Il propulse|Cause première
+MUSEE|1|Lieu d'exposition|Louvre
+NAVIRE|1|Grand bateau|Vaisseau
+NEVEU|1|Fils du frère|Parent
+NOBLE|1|Aristocrate|Généreux
+NOMBRE|1|Quantité|Chiffre
+NUAGE|1|Cumulus|Nuée
+OCEAN|1|Vaste mer|Atlantique
+ODEUR|1|Senteur|Parfum
+OMBRE|1|Zone sans soleil|Fantôme
+ONGLE|1|Bout du doigt|Griffe
+OPERA|1|Œuvre lyrique|Garnier
+ORAGE|1|Tonnerre et éclairs|Tempête
+ORDRE|1|Commandement|Rangement
+OREILLE|1|Organe de l'ouïe|Esgourde
+ORTIE|1|Plante piquante|Urticante
+OSEILLE|2|Plante acide|Argent
+OUTRE|1|En plus de|Sac de peau
+PAIRE|1|Deux|Couple
+PANNE|1|Arrêt|Défaillance
+PAPIER|1|Feuille|Document
+PARIS|1|Capitale|Ville lumière
+PAROLE|1|Mot|Promesse
+PARTI|1|Organisation politique|Absent
+PATTE|1|Pied d'animal|Écriture
+PAUSE|1|Arrêt|Repos
+PECHE|1|Fruit|Loisir au bord de l'eau
+PERLE|1|Bijou d'huître|Bourde
+PERTE|1|Défaite|Gaspillage
+PETIT|1|Pas grand|Enfant
+PHARE|1|Tour lumineuse|Feu de voiture
+PHOTO|1|Cliché|Image
+PIANO|1|Instrument à touches|Doucement
+PIECE|1|Salle|Monnaie
+PIEGE|1|Traquenard|Collet
+PISTE|1|Trace|Chemin
+PLACE|1|Esplanade|Siège
+PLAGE|1|Bord de mer|Rivage
+PLAIE|1|Blessure|Fléau
+PLANTE|1|Végétal|Dessous du pied
+POCHE|1|Petit sac|Livre de ___
+POEME|1|Vers|Ode
+POIDS|1|Masse|Lourdeur
+POING|1|Main fermée|Coup
+POINT|1|Ponctuation|Unité de score
+POIRE|1|Fruit|Naïf
+POISSON|1|Il nage|Signe du zodiaque
+POMME|1|Fruit croquant|Fruit d'Ève
+PORTE|1|Entrée|Huis
+POSTE|1|Emploi|Bureau de courrier
+POUCE|1|Gros doigt|Pause
+POULET|1|Volaille|Policier
+PRIME|1|Bonus|Récompense
+PROIE|1|Victime|Gibier
+PUNCH|1|Cocktail|Dynamisme
+QUAI|1|Bord de gare|Rive aménagée
+QUEUE|1|Appendice|File
+RADIO|1|Poste|Ondes
+RAMPE|1|Garde-fou|Pente
+RANGE|1|Ordonné|Classé
+RASOIR|1|Pour se raser|Ennuyeux
+RAYON|1|Rai de lumière|Étagère
+REGLE|1|Loi|Instrument de mesure
+REINE|1|Épouse du roi|Pièce d'échecs
+RENARD|1|Rusé de fable|Goupil
+REPAS|1|Dîner|Déjeuner
+RESTE|1|Demeure|Reliquat
+REVE|1|Songe|Désir
+RICHE|1|Fortuné|Abondant
+RIDEAU|1|Tenture|Voilage
+RIVAL|1|Concurrent|Adversaire
+ROBOT|1|Automate|Androïde
+ROCHE|1|Pierre|Minéral
+ROMAN|1|Récit long|Avant le gothique
+RONDE|1|Circulaire|Patrouille
+ROUGE|1|Couleur du sang|Fard
+ROUTE|1|Voie|Chemin
+RUBAN|1|Bande|Galon
+SABLE|1|Grains de plage|Petit gâteau
+SAINT|1|Canonisé|Sacré
+SALADE|1|Laitue|Mensonge
+SALLE|1|Pièce|Public
+SALON|1|Pièce de séjour|Exposition
+SAUCE|1|Assaisonnement|Jus
+SAVON|1|Pour se laver|Réprimande
+SCENE|1|Plateau de théâtre|Dispute
+SECRET|1|Confidentiel|Mystère
+SIECLE|1|Cent ans|Époque
+SIGNE|1|Indice|Signal
+SINGE|1|Primate|Imitateur
+SOEUR|1|Frangine|Religieuse
+SOLDE|1|Rabais|Reste dû
+SOMME|1|Total|Sieste
+SOURIS|1|Petit rongeur|Pour l'ordinateur
+SPORT|1|Activité physique|Discipline
+STADE|1|Terrain de sport|Phase
+STYLE|1|Manière|Élégance
+SUJET|1|Thème|Citoyen
+TABLE|1|Meuble|Index
+TALON|1|Arrière du pied|Souche
+TANTE|1|Sœur de la mère|Tata
+TASSE|1|Pour le café|Contenu
+TAUX|1|Pourcentage|Ratio
+TEMPS|1|Météo|Durée
+TENNIS|1|Sport de raquette|Chaussure de sport
+TERME|1|Mot|Échéance
+TEXTE|1|Écrit|Énoncé
+THEME|1|Sujet|Version inverse
+TIGRE|1|Félin rayé|Fauve
+TITRE|1|Intitulé|Diplôme
+TOILE|1|Tissu|Tableau
+TOMATE|1|Fruit rouge|Légume du ketchup
+TONNE|1|Mille kilos|Beaucoup
+TORSE|1|Buste|Poitrine
+TOTAL|1|Somme|Complet
+TOUCHE|1|Bouton de clavier|Contact
+TRACE|1|Empreinte|Dessine
+TRAIT|1|Ligne|Caractéristique
+TRESOR|1|Magot|Chéri
+TRIBU|1|Clan|Peuplade
+TROIS|1|Chiffre|Trio
+TRONC|1|Corps d'arbre|Boîte à dons
+TROUPE|1|Bande|Compagnie
+TUILE|1|Sur le toit|Malchance
+USAGE|1|Utilisation|Coutume
+USINE|1|Fabrique|Manufacture
+VACHE|1|Elle meugle|Méchant
+VAGUE|1|Lame|Imprécis
+VALEUR|1|Prix|Courage
+VEDETTE|1|Star|Bateau rapide
+VELOURS|1|Tissu doux|Côtelé
+VENTE|1|Commerce|Solde
+VENTRE|1|Abdomen|Panse
+VERBE|1|Mot d'action|Parole
+VERGER|1|Champ d'arbres fruitiers|Clos
+VESTE|1|Veston|Échec
+VIANDE|1|Chair|Bœuf ou porc
+VIDEO|1|Film|Clip
+VIOLON|1|Instrument à cordes|Prison
+VISAGE|1|Figure|Face
+VISITE|1|Venue|Inspection
+VITRE|1|Carreau|Fenêtre
+VIVRE|1|Exister|Habiter
+VOILE|1|Toile de bateau|Fin tissu
+VOISIN|1|Habitant d'à côté|Proche
+VOITURE|1|Automobile|Wagon
+VOLER|1|Planer|Dérober
+VOYAGE|1|Périple|Excursion
+ZEBRE|1|Équidé rayé|Drôle de type
+# --- verbes et formes conjuguées ---
+ALLA|2|Se rendit|Partit
+ALLE|2|Parti|Se rendre au passé
+AILLE|2|Qu'il parte|Qu'il se rende
+AIMA|1|Adora|Chérit jadis
+AIMES|1|Tu adores|Tu chéris
+ARMER|1|Équiper d'armes|Charger le fusil
+ARRET|1|Halte|Station de bus
+ASSURE|1|Certain|Garanti
+ATTEND|1|Patiente|Espère
+AVALE|1|Engloutit|Gobe
+BAILLE|2|Ouvre la bouche|S'ennuie
+BAISSE|1|Diminution|Recul
+BATIR|1|Construire|Édifier
+BOIRE|1|Avaler un liquide|Trinquer
+BOUGER|1|Remuer|Se déplacer
+BRULE|1|Calciné|Enflammé
+CALER|1|Stabiliser|S'arrêter net
+CASSER|1|Briser|Rompre
+CEDER|1|Abandonner|Plier
+CHANTER|1|Fredonner|Entonner
+CHERCHE|1|Fouille|Quête
+CIRER|2|Faire briller|Lustrer
+CITER|1|Mentionner|Nommer
+CLORE|2|Fermer|Achever
+COLLER|1|Fixer|Recaler
+COMPTE|1|Calcul|Dénombre
+CONNU|1|Célèbre|Familier
+COUDRE|1|Faire des points|Assembler au fil
+COURIR|1|Galoper|Sprinter
+CRIER|1|Hurler|Vociférer
+CROIRE|1|Avoir la foi|Penser
+DANSER|1|Valser|Guincher
+DEVINE|1|Trouve|Suppose
+DINER|1|Repas du soir|Souper
+DONNER|1|Offrir|Céder
+DORMIR|1|Faire dodo|Sommeiller
+DOUTER|1|Hésiter|Se méfier
+DURER|1|Persister|Tenir
+ECRIRE|1|Rédiger|Noter
+EGALER|2|Équivaloir|Rattraper
+ELEVER|1|Éduquer|Hisser
+ENTRER|1|Pénétrer|Franchir le seuil
+ERRER|2|Vagabonder|Se tromper
+ESSAIE|1|Tente|Teste
+ETEINT|1|Plus allumé|Terne
+ETRE|1|Exister|Créature
+EVITER|1|Esquiver|Contourner
+FAIRE|1|Réaliser|Fabriquer
+FERMER|1|Clore|Verrouiller
+FINIR|1|Terminer|Achever
+FONDRE|1|Se liquéfier|Fusionner
+GAGNER|1|Remporter|Toucher un salaire
+GARER|1|Stationner|Ranger sa voiture
+GOUTER|1|Collation de 16 h|Savourer
+GUERIR|1|Soigner|Se remettre
+HABITER|1|Résider|Loger
+IRAI|1|Je me rendrai|Futur d'aller
+IRAS|1|Tu te rendras|Futur d'aller
+IRONT|1|Ils se rendront|Futur d'aller
+JETER|1|Lancer|Mettre à la poubelle
+JOUER|1|S'amuser|Interpréter
+LAVER|1|Nettoyer|Rincer
+LEVER|1|Hisser|Aurore
+LIRA|1|Parcourra le texte|Déchiffrera
+LIRAS|1|Tu parcourras|Tu déchiffreras
+LOUER|1|Prendre en location|Vanter
+MANGER|1|Se nourrir|Dévorer
+MARIER|1|Unir|Associer
+METTRE|1|Placer|Poser
+MONTER|1|Grimper|Assembler
+MORDRE|1|Croquer|Attaquer des dents
+NAGER|1|Faire la brasse|Barboter
+NAITRE|1|Venir au monde|Éclore
+NOTER|1|Écrire|Évaluer
+NOUER|1|Faire un nœud|Lier
+OBEIR|1|Se soumettre|Écouter les ordres
+OFFRIR|1|Donner|Proposer
+OSA|2|Se risqua|Tenta
+OSAI|2|Je me risquai|Je tentai
+OSAS|2|Tu tentas|Tu te risquas
+OSE|1|Audacieux|Se risque
+OUVRIR|1|Déverrouiller|Commencer
+PARLER|1|Discuter|Bavarder
+PARTIR|1|S'en aller|Quitter
+PASSER|1|Traverser|Réussir
+PAYER|1|Régler|Rembourser
+PENSER|1|Réfléchir|Croire
+PERDRE|1|Égarer|Être battu
+PESER|1|Mesurer la masse
+PLEURER|1|Verser des larmes|Sangloter
+PORTER|1|Soulever|Vêtir
+POSER|1|Placer|Installer
+PRENDRE|1|Saisir|Attraper
+PRIER|1|Implorer|Supplier
+RAMER|1|Pagayer|Galérer
+RANGER|1|Mettre en ordre|Garde forestier
+RATER|1|Manquer|Échouer
+RECU|1|Admis|Facture
+RENDRE|1|Restituer|Vomir
+RESTER|1|Demeurer|Subsister
+REVER|1|Songer|Imaginer
+RIRA|1|S'amusera|Se moquera
+RIT|1|Il s'amuse|S'esclaffe
+ROULER|1|Avancer sur roues|Tromper
+SAUTER|1|Bondir|Exploser
+SAVOIR|1|Connaître|Culture
+SECHER|1|Essuyer|Manquer un cours
+SEMER|1|Planter des graines|Distancer
+SENTIR|1|Flairer|Éprouver
+SERRER|1|Presser|Étreindre
+SERVIR|1|Être utile|Mettre au service
+SIFFLER|1|Siffloter|Huer
+SONNER|1|Retentir|Carillonner
+SORTIR|1|Quitter|Aller dehors
+SOUFFLER|1|Expirer|Chuchoter
+SUIVRE|1|Accompagner|Talonner
+TAIRE|1|Garder secret|Cacher
+TENTER|1|Essayer|Séduire
+TIRER|1|Tracter|Faire feu
+TOMBER|1|Chuter|Choir
+TOUCHER|1|Palper|Émouvoir
+TOURNER|1|Pivoter|Filmer
+TRAVAIL|1|Boulot|Labeur
+TRIER|1|Classer|Sélectionner
+TROUVER|1|Découvrir|Dénicher
+VENIR|1|Arriver|Approcher
+VENDRE|1|Céder contre argent|Trahir
+VERSER|1|Remplir|Payer
+VIDER|1|Rendre vide|Évacuer
+VISER|1|Pointer|Ambitionner
+VOIR|1|Regarder|Constater
+VOTER|1|Choisir aux urnes|Élire
+# --- adjectifs ---
+AIGRE|1|Acide|Acerbe
+ALERTE|1|Signal d'urgence|Vif
+AMICAL|1|Sympathique|Cordial
+ANCIEN|1|Vieux|Ex
+ARIDE|1|Sec|Désertique
+AUSTERE|2|Sévère|Sobre
+AVARE|1|Radin|Grippe-sou
+BANAL|1|Ordinaire|Commun
+BAVARD|1|Qui parle trop|Pipelette
+BRAVE|1|Courageux|Gentil
+BREF|1|Court|En somme
+CALIN|1|Étreinte|Doux
+CERTAIN|1|Sûr|Quelqu'un
+CHAUD|1|Brûlant|Ardent
+CHAUVE|1|Sans cheveux|Dégarni
+CONTENT|1|Heureux|Satisfait
+CREUX|1|Vide à l'intérieur|Cavité
+CRUEL|1|Méchant|Impitoyable
+DIGNE|1|Méritant|Honorable
+DIVIN|1|Sublime|Céleste
+DOCILE|1|Obéissant|Soumis
+DROLE|1|Amusant|Bizarre
+EGAL|1|Identique|Même valeur
+ENORME|1|Gigantesque|Colossal
+ETROIT|1|Serré|Mince
+FACILE|1|Simple|Aisé
+FAIBLE|1|Pas fort|Fragile
+FATAL|1|Mortel|Inévitable
+FIDELE|1|Loyal|Croyant
+FRAGILE|1|Cassant|Délicat
+FRANC|1|Sincère|Ancienne monnaie
+FROID|1|Glacé|Distant
+GENTIL|1|Aimable|Mignon
+HABILE|1|Adroit|Doué
+HEUREUX|1|Content|Joyeux
+HONNETE|1|Intègre|Probe
+HUMIDE|1|Mouillé|Moite
+IDEAL|1|Parfait|Modèle
+IMMENSE|1|Énorme|Vaste
+INTIME|1|Privé|Proche
+IVRE|1|Soûl|Éméché
+JALOUX|1|Envieux|Possessif
+LACHE|1|Peureux|Détendu
+LENTE|1|Pas rapide|Œuf de pou
+LIMPIDE|1|Clair|Transparent
+LOURD|1|Pesant|Indigeste
+LOYAL|1|Fidèle|Franc
+MAIGRE|1|Mince|Peu gras
+MECHANT|1|Pas gentil|Cruel
+MINCE|1|Fin|Zut
+MODESTE|1|Humble|Simple
+MOYEN|1|Médian|Méthode
+MUET|1|Silencieux|Sans voix
+NAIF|1|Candide|Ingénu
+NATAL|1|De naissance|Pays ___
+NEUVE|1|Toute récente|Inédite
+NOBLE|1|Aristocrate|Généreux
+NORMAL|1|Habituel|Ordinaire
+OBESE|2|Très gros|Corpulent
+OBSCUR|1|Sombre|Mystérieux
+PAREIL|1|Semblable|Identique
+POLI|1|Courtois|Lisse
+PRESSE|1|Journaux|Urgent
+PROCHE|1|Près|Parent
+PROPRE|1|Net|Personnel
+RAPIDE|1|Véloce|Vite
+REEL|1|Vrai|Concret
+RIGIDE|1|Raide|Strict
+RUSE|1|Malin|Stratagème
+SALE|1|Malpropre|Crasseux
+SALEE|1|Avec du sel|Coûteuse
+SERIEUX|1|Grave|Fiable
+SEVERE|1|Strict|Rigoureux
+SIMPLE|1|Facile|Modeste
+SOLIDE|1|Robuste|Costaud
+SOMBRE|1|Obscur|Triste
+SOUPLE|1|Flexible|Agile
+STABLE|1|Équilibré|Fixe
+SUBTIL|2|Fin|Délicat
+SUPER|1|Génial|Carburant
+TENDRE|1|Doux|Affectueux
+TIMIDE|1|Réservé|Craintif
+TRISTE|1|Malheureux|Morose
+UNIQUE|1|Seul de son genre|Exceptionnel
+URGENT|1|Pressant|Prioritaire
+VASTE|1|Immense|Étendu
+VERT|1|Couleur|Écologiste
+VIDE|1|Creux|Néant
+VIVANT|1|En vie|Animé
+VOLAGE|2|Infidèle|Inconstant
+# --- nature, animaux, cuisine ---
+ABEILLE|1|Insecte du miel|Butineuse
+AGNEAU|1|Petit du mouton|Doux comme un ___
+AIGLE|1|Rapace|Oiseau royal
+ALGUE|1|Plante marine|Varech
+ANANAS|1|Fruit tropical|Fruit à couronne
+ARAIGNEE|1|Elle tisse sa toile|Huit pattes
+AVOINE|1|Céréale|Pour le cheval
+BALEINE|1|Grand cétacé|Fanon
+BANANE|1|Fruit jaune|Sac ventral
+BICHE|1|Femelle du cerf|Ma ___
+BOEUF|1|Bovin|Énorme
+BOUC|1|Mâle de la chèvre|Barbiche
+CANARD|1|Palmipède|Journal
+CAROTTE|1|Légume orange|Tromperie
+CASTOR|1|Rongeur bâtisseur|Barrage
+CERF|1|Grand cervidé|Bois sur la tête
+CERISE|1|Fruit rouge|Malchance
+CHENE|1|Arbre robuste|Gland
+CHEVAL|1|Équidé|Monture
+CHEVRE|1|Elle bêle|Fromage
+CHOU|1|Légume|Mon chéri
+COCHON|1|Porc|Goret
+CRAPAUD|1|Batracien|Défaut d'une pierre
+DAUPHIN|1|Cétacé joueur|Héritier
+DINDE|1|Volaille de Noël|Sotte
+ECUREUIL|1|Rongeur roux|Noisettes
+FOURMI|1|Insecte travailleur|Picotement
+FRAISE|1|Fruit rouge|Outil de dentiste
+FROMAGE|1|Brie ou camembert|Produit laitier
+GIBIER|1|Animal chassé|Venaison
+GRENOUILLE|1|Batracien vert|Rainette
+HERISSON|1|Animal à piquants|Ébouriffé
+HIBOU|1|Rapace nocturne|Chouette
+HOMARD|1|Crustacé|Rouge cuit
+HUITRE|1|Mollusque|Perle
+LAPIN|1|Rongeur aux longues oreilles|Faux bond
+LEZARD|1|Petit reptile|Paresser au soleil
+LIEVRE|1|Grand lapin|Course de fond
+MOUTON|1|Ovin|Suiveur
+MERLE|1|Oiseau noir|Siffleur
+MOULE|1|Mollusque|Forme
+NOIX|1|Fruit à coque|Cerneau
+OIGNON|1|Il fait pleurer|Bulbe
+OLIVE|1|Fruit à huile|Vert-brun
+ORANGE|1|Agrume|Couleur
+ORIGAN|2|Herbe aromatique|Pizza
+PANDA|1|Ours noir et blanc|Bambou
+PATATE|1|Pomme de terre|Coup
+PIGEON|1|Oiseau des villes|Dupe
+POIVRE|1|Épice|Avec le sel
+POIREAU|1|Légume vert|Faire le ___
+RADIS|1|Petit légume rouge|Sou
+RAISIN|1|Fruit de la vigne|Grappe
+REQUIN|1|Squale|Homme d'affaires impitoyable
+ROSEAU|1|Plante des marais|Canne
+SAPIN|1|Arbre de Noël|Conifère
+SARDINE|1|Petit poisson|Galon
+SAUMON|1|Poisson rose|Remonte la rivière
+SERPENT|1|Reptile|Couleuvre
+SOURCE|1|Fontaine|Origine
+TAUREAU|1|Bovin mâle|Signe du zodiaque
+TORTUE|1|Reptile à carapace|Lente
+TRUITE|1|Poisson de rivière|Saumonée
+TULIPE|1|Fleur à bulbe|Hollande
+VIPERE|1|Serpent venimeux|Mauvaise langue
+# --- géographie, culture ---
+AIN|2|Département 01|Affluent du Rhône
+AIX|2|Ville d'eaux|___-en-Provence
+ARLES|2|Ville de Van Gogh|Ville romaine du Rhône
+ASIE|1|Continent|Chine et Inde
+AUDE|2|Département 11|Fleuve de Carcassonne
+CAEN|2|Ville normande|Chef-lieu du Calvados
+CORSE|1|Île de Beauté|Ajaccio
+DIJON|1|Ville de la moutarde|Capitale bourguignonne
+DOUBS|2|Département 25|Rivière de Besançon
+EGYPTE|1|Pays des pyramides|Le Caire
+EIRE|3|Irlande|Île verte
+ESPAGNE|1|Pays de Madrid|Péninsule ibérique
+EURE|2|Département 27|Affluent de la Seine
+EVIAN|2|Eau minérale|Ville du Léman
+GARD|2|Département 30|Pont du ___
+GERS|2|Département 32|Pays d'Armagnac
+INDE|1|Pays de Gandhi|New Delhi
+INDRE|2|Département 36|Affluent de la Loire
+IRAN|1|Ancienne Perse|Téhéran
+IRAK|1|Pays de Bagdad|Mésopotamie
+ISERE|2|Département 38|Grenoble
+ITALIE|1|Pays de la botte|Rome
+JAPON|1|Empire du Soleil-Levant|Tokyo
+JURA|2|Massif de l'Est|Comté
+LENS|2|Ville du Nord|Sang et or
+LILLE|1|Capitale des Flandres|Braderie
+LOIRE|1|Plus long fleuve français|Châteaux
+LOT|2|Département 46|Rivière de Cahors
+LYON|1|Ville des Lumières|Bouchon
+MALI|2|Pays de Bamako|Pays sahélien
+MARNE|2|Taxis de la ___|Rivière champenoise
+METZ|2|Ville de Moselle|Lorraine
+MILAN|1|Ville italienne|Rapace
+NANTES|1|Ville de Loire-Atlantique|Édit
+NICE|1|Promenade des Anglais|Ville azuréenne
+NIL|1|Fleuve d'Égypte|Fleuve africain
+OISE|2|Département 60|Affluent de la Seine
+OMAN|2|Sultanat|Mascate
+ORNE|2|Département 61|Alençon
+OSLO|2|Capitale norvégienne|Fjord
+PARME|2|Ville du jambon|Couleur violette
+PEROU|1|Pays des Incas|Lima
+PERSE|2|Ancien Iran|Chat à poils longs
+REIMS|1|Ville du sacre|Champagne
+RHIN|1|Fleuve frontière|Strasbourg
+RHONE|1|Fleuve de Lyon|Département 69
+RIGA|2|Capitale lettone|Baltique
+ROME|1|Capitale italienne|Ville éternelle
+SAONE|2|Affluent du Rhône|Rivière de Chalon
+SEINE|1|Fleuve de Paris|Filet de pêche
+SION|3|Ville suisse|Colline de Jérusalem
+SOMME|2|Bataille de 1916|Fleuve picard
+TARN|2|Département 81|Gorges du ___
+TOGO|2|Pays de Lomé|Pays d'Afrique
+TOURS|1|Ville de Touraine|Rotations
+URI|3|Canton suisse|Altdorf
+UTAH|3|État américain|Salt Lake City
+VAR|2|Département 83|Fleuve de Nice
+VICHY|2|Ville d'eaux|Carreaux
+VIENNE|1|Capitale autrichienne|Valse
+YEMEN|2|Pays d'Arabie|Sanaa
+YONNE|2|Département 89|Auxerre
+# --- culture générale ---
+ALIBI|1|Excuse de suspect|Preuve d'absence
+AMEN|2|Ainsi soit-il|Fin de prière
+ANNEAU|1|Bague|Cercle
+ARCHE|1|Bateau de Noé|Voûte
+ARENES|2|Amphithéâtre|Lieu de corrida
+ARTISTE|1|Peintre|Créateur
+ASSIETTE|1|Plat|Équilibre
+ATOME|1|Particule|Infiniment petit
+AUTEL|2|Table de messe|Sacrifice
+AVENUE|1|Grande rue|Boulevard
+BALLET|1|Danse|Va-et-vient
+BANQUE|1|Établissement financier|Comptoir
+BAROQUE|2|Style chargé|Bizarre
+BIBLE|1|Livre saint|Référence
+BLASON|2|Armoiries|Écu
+BOUSSOLE|1|Elle indique le nord|Compas
+CAMERA|1|Appareil à filmer|Caméscope
+CANON|1|Arme à boulets|Très beau
+CASINO|1|Maison de jeu|Roulette
+CHATEAU|1|Demeure royale|Castel
+CINEMA|1|Septième art|Salle obscure
+CIRQUE|1|Clowns et acrobates|Désordre
+CLAVIER|1|Touches|Piano
+CLOWN|1|Auguste|Pitre
+COMEDIE|1|Pièce drôle|Simulation
+CONCERT|1|Spectacle musical|Harmonie
+DECOR|1|Ornement|Cadre
+DEESSE|1|Divinité féminine|Vénus
+DIAMANT|1|Pierre précieuse|Carbone pur
+DRAGON|1|Monstre cracheur de feu|Cavalier
+EDEN|2|Paradis|Jardin d'Adam
+EMAIL|1|Courriel|Vernis
+EPOPEE|2|Récit héroïque|Aventure
+ESCALIER|1|Marches|Degrés
+FANFARE|1|Orchestre de cuivres|Tapage
+FILM|1|Long métrage|Pellicule
+FLUTE|1|Instrument à vent|Verre à champagne
+GALOP|1|Allure rapide|Danse
+GLOIRE|1|Célébrité|Renommée
+GUITARE|1|Instrument à cordes|Gratte
+HEROS|1|Personnage principal|Brave
+HYMNE|1|Chant national|Marseillaise
+IDOLE|1|Star adulée|Statue divine
+JOURNAL|1|Quotidien|Carnet intime
+LEGENDE|1|Mythe|Explication d'image
+LETTRE|1|Courrier|Caractère
+MAGASIN|1|Boutique|Chargeur
+MARIAGE|1|Noces|Union
+MASQUE|1|Loup|Protection du visage
+MESSE|1|Office religieux|Liturgie
+MOTIF|1|Raison|Dessin répété
+MYTHE|1|Légende|Fable
+OASIS|1|Point d'eau|Refuge
+ORCHESTRE|1|Musiciens|Fosse
+PALAIS|1|Château|Goût
+PEINTRE|1|Artiste|Barbouilleur
+PIRATE|1|Corsaire|Hacker
+POETE|1|Versificateur|Rimeur
+PRINCE|1|Fils du roi|Altesse
+REGION|1|Territoire|Province
+RYTHME|1|Cadence|Tempo
+SAGA|2|Épopée|Récit familial
+SALUT|1|Bonjour|Sauvegarde
+SIRENE|1|Femme-poisson|Alarme
+SOLEIL|1|Astre du jour|Tournesol
+STATUE|1|Sculpture|Immobile
+TAMBOUR|1|Percussion|Batterie
+THEATRE|1|Scène|Art dramatique
+TRESOR|1|Magot|Mon chéri
+TROPHEE|1|Coupe|Récompense
+# --- mots courts de cruciverbiste ---
+ABER|3|Estuaire breton|Ria
+ACRE|3|Mesure agraire|Piquant
+AGA|3|Officier turc
+AGES|2|Époques|Ères
+AIRE|2|Surface|Nid d'aigle
+ALE|3|Bière anglaise
+ALES|3|Ville du Gard|Bières
+ALLO|1|Au téléphone|Qui est là ?
+ALU|2|Métal léger|Papier d'___
+ANA|3|Recueil de pensées|Anecdotes
+ANSES|2|Petites baies|Poignées
+ARS|3|Curé d'___|Arts
+ART|1|Talent|Peinture
+ASTI|3|Vin d'Italie|Mousseux piémontais
+ASTER|3|Fleur étoilée|Plante d'automne
+ATRE|2|Foyer|Cheminée
+AVAL|2|Plus bas|Garantie
+AVIDE|2|Cupide|Gourmand
+BAH|2|Peu importe|Bof
+BOB|2|Luge de course|Chapeau de toile
+BRIE|1|Fromage de Meaux
+CRIS|1|Hurlements|Appels
+DAIM|1|Cervidé|Cuir velouté
+DEUX|1|Paire|Couple
+EGOUT|1|Canalisation|Cloaque
+ELIRE|1|Voter pour|Choisir
+EMOI|2|Trouble|Agitation
+ENTE|3|Greffe|Scion
+EPAIS|1|Gros|Dense
+ERRE|2|Vagabonde|Allure
+ESSOR|2|Envol|Développement
+ETAIS|2|Supports|Tu existais
+ETAIT|1|Existait|Imparfait d'être
+ETIER|3|Canal de marais salant|Chenal
+EVE|2|Première femme
+EVENT|3|Narine de baleine|Fente
+GENE|1|Embarras|Unité d'ADN
+GRES|2|Roche|Poterie
+HERE|3|Pauvre ___|Misérable
+IDEES|1|Pensées|Opinions
+ISOLE|1|Seul|Écarté
+LARD|1|Gras de porc|Bacon
+LIEU|1|Endroit|Poisson
+LIRES|2|Monnaies italiennes|Ancienne devise
+LISSE|1|Uni|Sans aspérité
+NAPPE|1|Sur la table|Couche
+NEANT|1|Rien|Vide
+NIES|2|Contestes|Refuses
+NOTES|1|Résultats scolaires|Annotations
+NUEE|2|Nuage|Multitude
+ORES|3|D'___ et déjà|Désormais
+OSEE|3|Prophète|Risquée
+OTEE|2|Enlevée|Retirée
+OVALE|1|En forme d'œuf|Ellipse
+PARI|1|Gageure|Mise
+PERI|3|Mort en mer|Disparu
+RAS|1|Rien à signaler|Coupé court
+RATS|1|Rongeurs|Avares
+RENTE|2|Revenu|Pension
+RIRES|1|Éclats|Hilarité
+RITES|2|Cérémonies|Coutumes
+ROSEE|1|Gouttes du matin|Perles d'aube
+SALES|1|Malpropres|Crasseux
+SAINE|1|En bonne santé|Équilibrée
+SERRA|2|Étreignit|Pressa
+SERIE|1|Suite|Feuilleton
+SETS|2|Napperons|Manches
+SIESTE|1|Petit somme|Repos
+SIRES|2|Majestés|Tristes ___
+SITES|1|Lieux|Pages web
+SOIRS|1|Fins de journées|Veillées
+SOLS|1|Planchers|Terres
+SORTE|1|Genre|Espèce
+SOTTE|1|Idiote|Bête
+SUER|1|Transpirer|Peiner
+TARES|2|Défauts|Vices
+TASSE|1|Pour le café|Bol
+TENTER|1|Essayer|Séduire
+TETES|1|Crânes|Chefs
+TIRES|1|Tractes|Voitures
+TOISE|2|Mesure de taille|Regarde de haut
+TRAITE|1|Accord|Lettre de change
+TRES|1|Beaucoup|Fort
+TRIA|2|Classa|Sélectionna
+UNES|1|Premières pages|Certaines
+URANE|3|Oxyde d'uranium|Minerai
+USES|1|Abîmés|Râpés
+UTILES|1|Pratiques|Nécessaires
+VERSA|2|Paya|Répandit
+VIES|1|Existences|Biographies
+VOIES|1|Chemins|Rails
+VUES|1|Panoramas|Opinions
+EAUX|1|Rivières|Liquides
+ETES|1|Saisons chaudes|Vous existez
+ILES|1|Terres isolées|Archipel
+AMIS|1|Copains|Camarades
+NIDS|1|Maisons d'oiseaux|Repaires
+ROIS|1|Monarques|Mages
+LOIS|1|Règles|Codes
+MOTS|1|Termes|Paroles
+SOTS|1|Idiots|Imbéciles
+TETE|1|Crâne|Chef
+TAIRE|1|Cacher|Celer
+TIERS|1|Un sur trois|Autrui
+NEFS|2|Vaisseaux|Parties d'église
+ARTERE|1|Vaisseau sanguin|Grande rue
+# --- mots courts supplémentaires ---
+ACRES|3|Mesures agraires|Surfaces anciennes
+AERER|2|Ventiler|Oxygéner
+AGIR|1|Faire|Intervenir
+AGITE|1|Nerveux|Remué
+AIDER|1|Secourir|Assister
+AIGRI|2|Amer|Rancunier
+AILES|1|Pour voler|Flancs d'armée
+AIMEE|1|Adorée|Chérie
+AINSI|1|De cette façon|Donc
+AIRES|2|Surfaces|Nids d'aigles
+AISE|2|Confort|Content
+ALLES|3|Partis|Rendus
+ALORS|1|Donc|À ce moment-là
+AMENE|1|Conduit|Apporte
+AMERE|1|Pas sucrée|Aigrie
+AMIES|1|Copines|Camarades
+ANES|1|Baudets|Grisons
+ANGES|1|Êtres célestes|Chérubins
+ANNEE|1|Douze mois|Millésime
+ANTRES|2|Cavernes|Repaires
+APRES|1|Ensuite|Plus tard
+ARMES|1|Fusils|Blason
+ARRETE|1|Stoppe|Décision du préfet
+ASTRES|1|Étoiles|Corps célestes
+ATELIER|1|Lieu de travail|Studio d'artiste
+ATTIRE|1|Séduit|Charme
+AUTEL|2|Table de messe|Sacrifice
+AVERSE|1|Pluie soudaine|Ondée
+AVOUER|1|Confesser|Reconnaître
+BAISER|1|Bisou|Embrasser
+BALAI|1|Pour le ménage|Ramasse-poussière
+BARON|2|Noble|Seigneur
+BASSE|1|Pas haute|Guitare grave
+BATEAU|1|Navire|Embarcation
+BATTRE|1|Frapper|Vaincre
+BIENS|1|Propriétés|Possessions
+BOUT|1|Extrémité|Fin
+CANOT|1|Petit bateau|Barque
+CARRE|1|Quatre côtés égaux|Coin
+CASE|1|Hutte|Compartiment
+CELA|1|Ça|Ceci
+CENT|1|Dix dizaines|Dix fois dix
+CERNE|2|Marque sous l'œil|Entoure
+CESSE|1|Arrête|Sans ___
+CHOC|1|Collision|Heurt
+CIRE|2|Encaustique|Fait briller
+CLAN|1|Tribu|Famille
+CODE|1|Règlement|Mot de passe
+CRAINTE|1|Peur|Appréhension
+DEBAT|1|Discussion|Controverse
+DENIER|2|Ancienne monnaie|Contester
+DERNIER|1|Ultime|Final
+DESERT|1|Sahara|Vide
+DEVOIR|1|Obligation|Exercice
+DIRE|1|Prononcer|Raconter
+DOSE|1|Quantité|Ration
+DOTER|2|Équiper|Pourvoir
+DRAPE|2|Étoffe en plis|Couvert
+ECART|1|Distance|Différence
+ECRIT|1|Rédigé|Texte
+EDITER|1|Publier|Modifier un fichier
+EGARE|1|Perdu|Déboussolé
+ELEVE|1|Écolier|Haut
+ELITE|1|Crème|Fine fleur
+ENTIER|1|Complet|Total
+EPATE|2|Étonne|Esbroufe
+EPINE|1|Piquant de rose|Difficulté
+ERIGE|2|Construit|Élève
+ESPOIR|1|Espérance|Promesse
+ESSAIS|1|Tentatives|Points au rugby
+ESTIME|1|Considération|Évalue
+ETAIN|2|Métal gris|Pichet ancien
+ETAGE|1|Niveau|Palier
+ETENDU|1|Vaste|Allongé
+ETOILE|1|Astre|Vedette
+ETRANGE|1|Bizarre|Singulier
+EVENTAIL|1|Pour s'éventer|Gamme
+FAUTE|1|Erreur|Manquement
+FERIE|1|Jour de repos|Chômé
+FILET|1|Pour pêcher|Morceau de viande
+FINE|1|Mince|Eau-de-vie
+GAIETE|1|Bonne humeur|Joie
+GARAGE|1|Pour la voiture|Atelier auto
+GARCON|1|Petit homme|Serveur
+GRAS|1|Plein de graisse|Gros
+HATE|1|Précipitation|Empressement
+INSTANT|1|Moment|Seconde
+INTERET|1|Attention|Rente
+IRAIT|2|Se rendrait
+LAIDE|1|Pas belle|Moche
+LAISSE|1|Corde du chien|Abandonne
+LATTE|2|Planche fine|Café au lait
+LEST|2|Ballast|Poids d'équilibre
+LIANE|2|Plante grimpante|Tarzan
+LINGE|1|Vêtements à laver|Lessive
+LISTE|1|Énumération|Inventaire
+LITRES|1|Mesures de volume|Bouteilles
+LOGE|1|Pièce d'artiste|Habite
+LOTION|2|Soin liquide|Après-rasage
+LUEUR|1|Faible lumière|Éclat
+LUTTE|1|Combat|Combat de corps
+MAILLE|1|Boucle de tricot|Monnaie ancienne
+MALADE|1|Souffrant|Patient
+MANIE|1|Habitude|Tic
+MANTEAU|1|Pardessus|Vêtement chaud
+MATELAS|1|Pour le lit|Couche
+MEDAILLE|1|Récompense olympique|Breloque
+MENTIR|1|Tromper|Affabuler
+MESURE|1|Dimension|Rythme
+METIER|1|Profession|Machine à tisser
+MIETTE|1|Petit morceau de pain|Brin
+MINUTE|1|Soixante secondes|Original d'un acte
+MOINS|1|Signe de soustraction|En dessous
+MOITIE|1|Demi|Épouse
+NATION|1|Pays|Peuple
+NETTE|1|Propre|Précise
+NIECE|1|Fille du frère|Parente
+NOTRE|1|À nous|Possessif
+NUANCE|1|Teinte|Subtilité
+OEUVRE|1|Création|Travail
+OISEAU|1|Il a des plumes|Volatile
+ORDINAIRE|1|Banal|Commun
+OSIER|2|Pour les paniers|Saule
+OTAGE|1|Prisonnier|Gage humain
+OURSE|2|Femelle de l'ours|Grande ___
+OUTILS|1|Instruments|Ustensiles
+PAIRE|1|Couple|Deux
+PANIER|1|Corbeille|But au basket
+PARENT|1|Père ou mère|Proche
+PASSE|1|Hier|Transmission de ballon
+PATIENT|1|Malade|Endurant
+PAUVRE|1|Démuni|Pitoyable
+PELE|2|Chauve|Épluché
+PERIL|2|Danger|Risque
+PIRE|1|Plus mauvais|Pis
+PLAT|1|Mets|Sans relief
+PLUS|1|Signe d'addition|Davantage
+POESIE|1|Vers|Lyrisme
+PRESSE|1|Journaux|Urgent
+PRET|1|Paré|Emprunt
+PRIER|1|Implorer|Supplier
+PRISE|1|Électrique|Capture
+RACE|1|Lignée|Espèce
+RAIS|3|Rayons|Chefs égyptiens
+RALE|2|Souffle rauque|Oiseau des marais
+RAPE|2|Émincé finement|Ustensile à fromage
+RASER|1|Couper la barbe|Ennuyer
+RATON|2|___ laveur|Petit rat
+RAYE|1|Strié|Barré
+REAGIR|1|Répondre|Se défendre
+RECIT|1|Histoire|Narration
+REGARD|1|Coup d'œil|Œillade
+REINE|1|Souveraine|Pièce d'échecs
+RELIER|1|Joindre|Connecter
+REMISE|1|Rabais|Hangar
+RENTRE|1|Revient|Encaisse
+REPOS|1|Détente|Pause
+RESEAU|1|Maillage|Internet
+RETARD|1|Délai|Lenteur
+RETOUR|1|Revenir|Renvoi
+RIDE|1|Pli de la peau|Vague
+RIEN|1|Néant|Zéro
+RISEE|2|Moquerie|Petite brise
+ROSES|1|Fleurs|Couleurs
+ROTI|1|Viande au four|Cuit au four
+ROUTE|1|Voie|Chemin
+SAISIR|1|Attraper|Comprendre
+SAISON|1|Été ou hiver|Période
+SALIR|1|Tacher|Souiller
+SANTE|1|Bon état|Tchin-tchin
+SAUTE|1|Bondit|Plat poêlé
+SEANCE|1|Réunion|Projection
+SEAU|1|Récipient à anse|Baquet
+SECTE|2|Groupe religieux|Gourou
+SENTE|3|Petit sentier|Chemin
+SEUIL|1|Pas de porte|Limite
+SIEGE|1|Chaise|Encerclement
+SOIN|1|Attention|Traitement
+SOINS|1|Traitements|Attentions
+SOLDAT|1|Militaire|Troufion
+SORTIE|1|Issue|Promenade
+SOUPE|1|Potage|Bouillon
+STAR|1|Vedette|Étoile
+STOP|1|Arrêt|Panneau rouge
+TAILLE|1|Hauteur|Coupe
+TALENT|1|Don|Aptitude
+TAPE|1|Petite claque|Frappe au clavier
+TARIF|1|Prix|Barème
+TEINT|1|Couleur de peau|Coloré
+TENUE|1|Habit|Maintien
+TERRAIN|1|Sol|Lieu de match
+TIEDE|1|Ni chaud ni froid|Mou
+TIRET|1|Petit trait|Trait d'union
+TOILE|1|Tissu|Tableau
+TONNE|1|Mille kilos|Beaucoup
+TORT|1|Erreur|Préjudice
+TOTAL|1|Somme|Complet
+TRAIN|1|Rail|Allure
+TRAITE|1|Lettre de change|Accord
+TRESSE|1|Natte|Galon
+TRUC|1|Astuce|Chose
+UNION|1|Alliance|Mariage
+UNITE|1|Un|Cohésion
+URINE|2|Pipi|Liquide organique
+USAGER|1|Utilisateur|Client
+VAISSEAU|1|Navire|Veine
+VALISE|1|Bagage|Mallette
+VEINE|1|Vaisseau sanguin|Chance
+VELOS|1|Bicyclettes|Deux-roues
+VENISE|1|Ville des gondoles|Cité des Doges
+VERITE|1|Réalité|Franchise
+VERNIS|1|Laque|Apparence
+VESTE|1|Veston|Échec
+VIRAGE|1|Courbe|Changement
+VISION|1|Vue|Apparition
+VITAL|1|Essentiel|Indispensable
+VOILIER|1|Bateau à voile|Oiseau
+VOLONTE|1|Détermination|Souhait
+ZELE|2|Ardeur|Empressement
+# --- formes et petits mots supplémentaires ---
+ABUS|1|Excès|Injustice
+ACIDE|1|Aigre|Corrosif
+ADORE|1|Aime|Vénère
+AIDES|1|Secours|Assistants
+AIES|2|Que tu possèdes|Subjonctif d'avoir
+AILE|1|Pour voler|Partie d'avion
+AIT|2|Qu'il possède|Subjonctif d'avoir
+AMANTS|2|Amoureux|Galants
+ANNEES|1|Ans|Millésimes
+ARRIERE|1|Derrière|Défenseur
+ASSIS|1|Sur une chaise|Installé
+ATOUTS|1|Avantages|Cartes fortes
+AVAIT|1|Possédait|Imparfait d'avoir
+AVEU|1|Confession|Reconnaissance
+AVIRON|1|Rame|Sport de rameur
+BAS|1|Pas haut|Chaussette fine
+CITE|1|Ville|Mentionne
+DIRE|1|Prononcer|Raconter
+DORE|1|Couleur d'or|Bronzé
+ELU|1|Choisi|Député
+ENTRE|1|Pénètre|Parmi
+ERRANT|2|Vagabond|Nomade
+ETES|1|Saisons chaudes|Vous existez
+ETIRE|1|Allongé|Distendu
+EVITE|1|Esquive|Fuit
+FETES|1|Célébrations|Festivités
+INITIALE|1|Première lettre|Début
+INTRUS|1|Indésirable|Étranger
+ISSU|2|Né de|Provenant
+LAS|2|Fatigué|Épuisé
+LES|1|Article pluriel|Eux
+LIT|1|Couche|Parcourt un texte
+LOTS|1|Parts|Gains
+MENU|1|Carte du restaurant|Petit
+MIS|1|Placé|Vêtu
+NOTE|1|Résultat scolaire|Do ou ré
+NUL|1|Zéro|Sans valeur
+OSE|1|Audacieux|Se risque
+OTES|1|Enlèves|Retires
+PATES|1|Spaghetti|Nouilles
+PIS|2|Pire|Mamelle
+RAT|1|Rongeur|Avare
+RETS|3|Filets|Pièges
+RIA|3|Vallée envahie par la mer|Aber
+RIS|2|Thymus de veau|Rires
+ROSE|1|Fleur|Couleur
+RUES|1|Voies|Artères
+SAIS|1|Connais|Je ___
+SAIT|1|Connaît|Il ___
+SALE|1|Malpropre|Crasseux
+SEAU|1|Baquet|Récipient à anse
+SENT|1|Flaire|Éprouve
+SERT|1|Est utile|Fait le service
+SES|1|Possessif pluriel|À lui
+SIEN|1|À lui|Possessif
+SIENS|1|Ses proches|Famille
+SOIE|1|Tissu précieux|Fil de ver
+SONT|1|Existent|Présent d'être
+SORS|1|Va dehors !|Destins
+SUIS|1|J'existe|Je talonne
+TAIS|1|Garde le silence|Chut !
+TANT|1|Tellement|Si fort
+TARTE|1|Pâtisserie|Gifle
+TES|1|Possessif pluriel|À toi
+TIENS|1|Prends !|Garde
+TIRE|1|Tracte|Voiture
+TOUS|1|Ensemble|Chacun
+TRAINS|1|Convois|Allures
+TRIS|1|Classements|Sélections
+TUES|2|Abats|Supprimes
+UNIES|1|Lisses|Solidaires
+USA|2|Abîma|États-Unis, en sigle
+USINES|1|Fabriques|Manufactures
+VAS|1|Tu te rends|Va
+VENTS|1|Souffles d'air|Mistrals
+VERS|1|Ligne de poème|En direction de
+VITRES|1|Carreaux|Fenêtres
+VOIT|1|Regarde|Aperçoit
+VOTE|1|Élection|Scrutin
+NOTA|3|Remarque|___ bene
+ANTE|3|Pilier d'angle|Pilastre
+ENNUI|1|Lassitude|Souci
+ETRES|1|Créatures|Individus
+IRIS|1|Fleur|Partie de l'œil
+REINS|1|Organes filtrants|Lombes
+SAINS|1|En bonne santé|Salubres
+TENTES|1|Abris de camping|Essais
+TERRES|1|Sols|Domaines
+SALSA|1|Danse latine|Sauce tomate
+SAUNA|1|Bain de vapeur|Étuve
+SENAT|1|Chambre haute|Palais du Luxembourg
+SOLE|1|Poisson plat|Corne du sabot
+TALUS|1|Pente|Remblai
+TENOR|1|Voix aiguë|Ponte
+TOAST|1|Pain grillé|Discours
+TRAIT|1|Ligne|Caractéristique
+ATTRAIT|1|Charme|Séduction
+LUTIN|1|Petit diable|Farfadet
+NAINS|1|Compagnons de Blanche-Neige|Petits
+NOTION|1|Idée|Concept
+ORTEIL|1|Doigt de pied|Gros ___
+OTARIE|1|Mammifère marin|Lion de mer
+RATEAU|1|Outil de jardin|Refus amoureux
+SALUER|1|Dire bonjour|Rendre hommage
+SERIN|2|Petit oiseau jaune|Niais
+SIRE|2|Majesté|Monseigneur
+TISANE|1|Infusion|Camomille
+TRAINEAU|1|Luge|Attelage de neige
+NEANT|1|Rien|Vide
+AUTRUI|1|Les autres|Prochain
