@@ -4,7 +4,10 @@
 - Once a word is found (or, in paper mode, once the grid is complete and right), hovering its
   boxes or its definition on a computer shows an explanation. On a phone, tap a found word: the
   explanation appears in the bar above the grid.
-- Explanations come from data/explications-fr.txt; until a word has one, its definition is shown.
+- Every word of the list now has a short explanation: its meaning, and why each definition
+  fits (wordplay, conjugated forms, abbreviations, people and places).
+- While writing them, about 40 wrong definitions were found and removed or fixed (for example
+  GOLF « Baie », which is « golfe »), and 3 words with no correct definition left were removed.
 
 ## 2026-11-16 — Better on phones
 - The grid always fits the screen width: no more sideways scrolling.

@@ -63,7 +63,7 @@ export function parseDictionary(text) {
     const prev = byWord.get(w);
     if (prev) {
       prev.tier = Math.min(prev.tier, tier);
-      prev.clues.push(...clues);
+      for (const q of clues) if (!prev.clues.includes(q)) prev.clues.push(q);
     } else {
       byWord.set(w, { w, tier, clues });
     }

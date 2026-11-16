@@ -299,7 +299,7 @@ ROC|1|Gros caillou|Inébranlable
 ROT|2|Renvoi|Éructation
 RUT|2|Période des amours|Brame
 SAS|2|Petite pièce étanche|Tamis
-SAX|2|Instrument de jazz|Cuivre de Coltrane
+SAX|2|Instrument de jazz
 SES|1|À lui
 SIS|3|Situé|Placé
 SOT|1|Idiot|Bête
@@ -371,7 +371,7 @@ BORD|1|Rive|Lisière
 BOUE|1|Terre mouillée|Gadoue
 BRAS|1|Membre supérieur|Détroit
 BRUN|1|Couleur châtain|Foncé
-BUTE|2|Obstiné|Petite colline
+BUTE|2|Obstiné
 CAGE|1|Prison à oiseaux|Pour l'escalier
 CAPE|1|Manteau sans manches|Habit de torero
 CAVE|1|Sous-sol|Cellier
@@ -396,7 +396,7 @@ CUBE|1|Dé|Solide à six faces
 CURE|1|Traitement|Presbytère
 DAME|1|Femme|Pièce d'échecs
 DANS|1|À l'intérieur|Préposition
-DATE|1|Jour précis|Fruit du palmier
+DATE|1|Jour précis
 DENT|1|Dans la bouche|Sommet pointu
 DIRE|1|Prononcer|Affirmer
 DOUX|1|Tendre|Pas rêche
@@ -537,7 +537,7 @@ PURE|1|Sans mélange|Chaste
 RAGE|1|Colère|Maladie
 RAME|1|Aviron|Train de métro
 RANG|1|File|Grade
-RARE|1|Peu fréquent|Saignant
+RARE|1|Peu fréquent
 RASE|1|Coupe court|Démolit
 RAVI|1|Enchanté|Content
 REIN|1|Organe filtrant|Lombes
@@ -1437,7 +1437,7 @@ ALLO|1|Au téléphone|Qui est là ?
 ALU|2|Métal léger|Papier d'___
 ANA|3|Recueil de pensées|Anecdotes
 ANSES|2|Petites baies|Poignées
-ARS|3|Curé d'___|Arts
+ARS|3|Curé d'___
 ART|1|Talent|Peinture
 ASTI|3|Vin d'Italie|Mousseux piémontais
 ASTER|3|Fleur étoilée|Plante d'automne
@@ -1811,7 +1811,7 @@ SIEN|1|À lui|Possessif
 SIENS|1|Ses proches|Famille
 SOIE|1|Tissu précieux|Fil de ver
 SONT|1|Existent|Présent d'être
-SORS|1|Va dehors !|Destins
+SORS|1|Va dehors !
 SUIS|1|J'existe|Je talonne
 TAIS|1|Garde le silence|Chut !
 TANT|1|Tellement|Si fort
@@ -1839,7 +1839,7 @@ ETRES|1|Créatures|Individus
 IRIS|1|Fleur|Partie de l'œil
 REINS|1|Organes filtrants|Lombes
 SAINS|1|En bonne santé|Salubres
-TENTES|1|Abris de camping|Essais
+TENTES|1|Abris de camping
 TERRES|1|Sols|Domaines
 SALSA|1|Danse latine|Sauce tomate
 SAUNA|1|Bain de vapeur|Étuve
@@ -2222,7 +2222,7 @@ MONTRER|1|Indiquer|Exhiber
 RENDEZ|2|Restituez !|Capitulez !
 TELLE|1|Pareille|Semblable
 APPELE|1|Nommé|Convoqué
-LIEUX|1|Endroits|Poissons de mer
+LIEUX|1|Endroits
 PIEDS|1|Extrémités des jambes|Unités de vers
 PROJETS|1|Plans|Desseins
 REGLES|1|Lois|Instruments de mesure
@@ -2434,7 +2434,7 @@ EXTREME|1|Ultime|Excessif
 FIGURE|1|Visage|Forme géométrique
 IMAGINE|1|Il invente|Fictif
 LECTURE|1|Action de lire|Interprétation
-MAMAN|1|Mère|Maternelle
+MAMAN|1|Mère
 MATCHS|1|Rencontres sportives|Parties
 MODERNE|1|Actuel|Récent
 NOIRE|1|Note de musique|Sombre
@@ -2518,7 +2518,7 @@ PARLES|2|Tu causes|Tu discutes
 QUITTE|1|Il part|Libéré
 REDUIRE|1|Diminuer|Abaisser
 REPOND|1|Il réplique|Il riposte
-SOURIRE|1|Rictus joyeux|Rire silencieux
+SOURIRE|1|Rire silencieux
 VAN|2|Fourgon pour chevaux|Minibus
 ALCOOL|1|Boisson forte|Spiritueux
 CARTES|1|Jeu de bridge|Plans
@@ -2576,7 +2576,7 @@ ACTEUR|1|Comédien|Protagoniste
 AJOUTE|1|Il additionne|Il complète
 ARABE|1|Langue du Coran|Chiffre courant
 BLAGUE|1|Plaisanterie|Farce
-CHUTE|1|Dégringolade|Silence !
+CHUTE|1|Dégringolade
 CRIME|1|Meurtre|Forfait
 ESSAYE|1|Il tente|Il teste
 FICHE|1|Formulaire|Prise électrique
@@ -2664,14 +2664,14 @@ ERREURS|1|Fautes|Bévues
 FINIT|1|Il termine|Il achève
 FOUS|1|Déments|Pièces d'échecs
 ISRAEL|2|État hébreu|Pays de Tel-Aviv
-METRO|1|Train urbain|Sous-terrain parisien
+METRO|1|Train urbain|Souterrain parisien
 PENSES|2|Tu réfléchis|Tu crois
 RIVIERE|1|Cours d'eau|Collier de diamants
 SALAIRE|1|Paye|Rémunération
 TRENTE|1|Trois dizaines|Mois moyen en jours
 EPREUVE|1|Examen|Malheur
 ETOILES|1|Astres|Récompenses du Michelin
-BRESIL|1|Pays de Rio|Pays du samba
+BRESIL|1|Pays de Rio|Pays de la samba
 CHALEUR|1|Canicule|Ardeur
 DOIGTS|1|Bouts de main|Phalanges
 DETAIL|1|Précision|Vente au ___
@@ -3335,10 +3335,10 @@ FLOTTE|1|Escadre|Pluie, familièrement
 FORCER|1|Contraindre|Fracturer
 FROIDE|1|Glacée|Distante
 GUERE|2|Pas beaucoup|Peu
-INTER|2|Joueur d'ailier|Préfixe d'entre
+INTER|2|Préfixe d'entre
 ISSUS|2|Nés de|Sortis
 JETTE|2|Lance|Balance
-JO|2|Jeux olympiques|Bulletin officiel, en bref
+JO|2|Jeux olympiques
 MASSIF|1|Groupe de montagnes|Imposant
 MOTEURS|1|Ils font tourner|Mécaniques
 NAVIRES|1|Bateaux|Bâtiments
@@ -3445,7 +3445,7 @@ EXERCER|1|Entraîner|Pratiquer
 FAUTES|1|Erreurs|Péchés
 FIDELES|1|Loyaux|Paroissiens
 FORETS|1|Bois|Mèches de perceuse
-GOLF|1|Sport du green|Baie
+GOLF|1|Sport du green
 GERE|2|Administre|Mène
 LEGALE|2|Licite|Réglementaire
 MERES|1|Mamans|Génitrices
@@ -3458,7 +3458,7 @@ RECUEIL|1|Anthologie|Collection
 RESSORT|1|Spirale élastique|Compétence
 SONS|1|Bruits|Résidus du blé
 STUPIDE|1|Bête|Idiot
-TENANT|2|Détenteur du titre|Appui d'une maison
+TENANT|2|Détenteur du titre
 TOMBEE|2|Chue|Crépuscule, la ... du jour
 TROMPER|1|Duper|Être infidèle
 VOLUMES|1|Tomes|Contenances
@@ -3549,7 +3549,7 @@ OPTIQUE|1|De la vue|Point de vue
 PLAFOND|1|Haut de la pièce|Limite maximum
 RENDUS|2|Restitués|Vomis
 ROUEN|2|Ville de Normandie|Bûcher de Jeanne
-ROUES|1|Roulent|Supplices anciens
+ROUES|1|Supplices anciens
 SUSPECT|1|Douteux|Prévenu
 TALENTS|1|Dons|Aptitudes
 TORONTO|2|Ville canadienne|Ville de l'Ontario
@@ -3605,7 +3605,7 @@ CONCLU|2|Terminé|Signé
 COSTUME|1|Habit d'homme|Déguisement
 CRANE|1|Boîte crânienne|Fanfaron
 DOC|2|Toubib
-DUQUEL|2|De quoi|Relatif composé
+DUQUEL|2|Relatif composé
 DEPIT|1|Rancœur|Amertume
 EXCES|1|Abus|Démesure
 FAILLI|2|A manqué de|Commerçant ruiné
@@ -3618,7 +3618,7 @@ PARFUM|1|Senteur|Goût de glace
 PHRASES|1|Suites de mots|Propositions
 PIRES|1|Plus mauvais|Les plus mauvais
 PREVOIR|1|Anticiper|Prédire
-REDUITE|2|Diminuée|Petite pièce
+REDUITE|2|Diminuée
 SEXUEL|1|Du sexe|Charnel
 SMS|1|Texto|Message de portable
 SOIGNER|1|Guérir|Prendre soin
@@ -3704,7 +3704,7 @@ LIBERE|2|Affranchi|Relâché
 MENTALE|2|De l'esprit|Psychique
 MEUBLES|1|Mobilier|Tables et chaises
 MIENNE|2|À moi|Possessif féminin
-MEPRIS|1|Dédain|Erreur de nom
+MEPRIS|1|Dédain
 RAMENE|2|Rapporte|Raccompagne
 RAPIDES|1|Vifs|Rochers de rivière
 RELATIF|1|Pas absolu|Pronom
@@ -3820,7 +3820,7 @@ SAVOIE|2|Région alpine|Pays du reblochon
 SORTIS|2|Partis|Publiés
 SECHE|1|Aride|Cigarette, en argot
 TABLES|1|Meubles à repas|Tableaux de multiplication
-TRIPLE|1|Trois fois|Saut au ski
+TRIPLE|1|Trois fois
 VALOIR|1|Coûter|Mériter
 ENORMES|1|Gigantesques|Colossaux
 ALBUMS|1|Disques|Recueils de photos
@@ -3988,7 +3988,7 @@ AURONS|2|Posséderons|Futur d'avoir
 AVERE|2|Prouvé|Confirmé
 AZUR|1|Bleu ciel|Côte d'...
 CAMPUS|1|Cité universitaire|Domaine de fac
-COLLIER|1|Bijou de cou|Laisse
+COLLIER|1|Bijou de cou
 CONCLUT|2|Termine|Déduit
 CONFIE|2|Remis en garde|Livre un secret
 COURBE|1|Arrondie|Graphique
@@ -4304,7 +4304,7 @@ ORGANE|1|Le foie en est un|Voix, ou journal
 PORTS|1|Abris pour bateaux|Havres
 RACHAT|2|Achat d'une entreprise|Rédemption
 REMPLIE|2|Pleine|Comblée
-RETOURS|1|Allers à l'envers|Revenues
+RETOURS|1|Allers à l'envers
 REVERS|1|Envers d'une pièce|Coup de tennis
 RESOLU|2|Déterminé|Tiré au clair
 REUNI|2|Rassemblé|Joint
@@ -4548,7 +4548,7 @@ LEADERS|2|Meneurs|Chefs de file
 LITS|1|Couches|Pour dormir
 MEURS|2|Tu décèdes|Je péris
 MERITES|2|Qualités|Tu vaux
-METAUX|1|Fer et cuivre|Minerais
+METAUX|1|Fer et cuivre
 OPPOSES|2|Contraires|Antagonistes
 POSEZ|2|Placez|Mettez à terre
 PRISONS|1|Cachots|Geôles
@@ -4610,7 +4610,7 @@ AJOUTEE|2|Additionnée|Insérée
 APPLI|2|Programme mobile|Logiciel de smartphone
 ARNAQUE|1|Escroquerie|Duperie
 BATI|2|Construit|Charpente
-CABINE|1|Petite pièce|Cockpit d'essayage
+CABINE|1|Petite pièce
 CASTING|2|Sélection d'acteurs|Audition
 COMBLER|1|Remplir|Satisfaire pleinement
 CROISES|2|Entrelacés|Mots ... (jeu)
@@ -4730,7 +4730,7 @@ TOUCHES|1|Du clavier|Tu palpes
 VERSE|2|Coule|Il pleut à ...
 VEUILLE|2|Qu'il désire|Daigne
 VIOLER|2|Enfreindre|Transgresser
-VIOLET|1|Couleur mauve|Fleur des bois
+VIOLET|1|Couleur mauve
 ECRASER|1|Aplatir|Broyer
 EDITE|2|Publie|Imprime
 ACCUSER|1|Inculper|Incriminer
@@ -4767,7 +4767,7 @@ PLANTER|1|Mettre en terre|Laisser en plan
 PREFACE|2|Avant-propos|Introduction
 REFLETE|2|Renvoie l'image|Traduit
 RENDAIT|2|Restituait|Vomissait
-REVENUE|2|Rentrée|Salaire
+REVENUE|2|Rentrée
 RITUEL|1|Cérémonial|Habituel
 SENTIER|1|Chemin étroit|Piste
 SERVAIT|2|Il était utile|Elle versait
@@ -5172,7 +5172,7 @@ PAQUETS|1|Colis|Ballots
 PERDUES|2|Égarées|Paumées
 PLIER|1|Courber|Céder
 POISON|1|Venin|Toxique
-POUMONS|1|Organes respiratoires|Bronches
+POUMONS|1|Organes respiratoires
 RAILS|1|Voies ferrées|Barres d'acier
 REMPLIT|2|Comble|Complète
 REPERE|1|Marque|Jalon
@@ -5298,7 +5298,7 @@ ELARGIR|1|Agrandir|Étendre
 ADEPTES|2|Fidèles|Partisans
 AIRBUS|2|Avion européen|Avionneur toulousain
 APPRETE|2|Prépare|Maniéré
-BLEUES|1|Couleur du ciel|Ecchymoses
+BLEUES|1|Couleur du ciel
 BONTE|1|Gentillesse|Bienveillance
 BOUCHON|1|Liège|Embouteillage
 BETISES|1|Sottises|Bonbons de Cambrai
@@ -5372,7 +5372,7 @@ COCAINE|2|Drogue blanche|Poudre illicite
 COUREUR|1|Sportif de la piste|Homme volage
 CREVE|1|Percé, pour un pneu|Épuisé
 DUCHE|2|Terre d'un duc|Fief ducal
-DURENT|2|Persistèrent|Résistent au temps
+DURENT|2|Résistent au temps
 DUS|2|Qu'on doit|Exigés
 DELITS|1|Infractions|Fautes pénales
 EIFFEL|2|Ingénieur de la tour|Gustave, à Paris
@@ -5511,7 +5511,7 @@ PRESIDE|2|Il dirige la séance|Il mène les débats
 QUAIS|1|Bords de gare|Rives aménagées
 RDC|2|Rez-de-chaussée, abrégé|Pays de Kinshasa
 RELACHE|2|Repos|Fermeture du théâtre
-REPARTI|2|Distribué|Rentré à nouveau
+REPARTI|2|Distribué
 RIGOLER|1|Rire|S'amuser
 RWANDA|2|Pays de Kigali|Mille collines
 SECS|1|Arides|Pas mouillés
@@ -6230,7 +6230,7 @@ FLAMAND|2|Néerlandais belge|D'Anvers
 FORMATS|2|Dimensions|Tailles
 FRAISES|1|Fruits rouges|Outils de dentiste
 GORGES|1|Gosiers|Défilés
-GOUTE|2|Dégusté|Collation
+GOUTE|2|Dégusté
 GRATTER|1|Racler|Démanger
 GRIFFES|1|Ongles de chat|Signatures
 JOUIT|2|Il profite|Il savoure
@@ -6467,7 +6467,6 @@ DEGOUT|1|Répugnance|Aversion
 DEMENT|1|Fou|Nie, au présent
 DEPLOIE|2|Étend|Déplie
 DEPRIME|1|Coup de blues|Cafard
-ENFUIT|2|Cache sous terre|Enterre
 ENNUYER|1|Lasser|Contrarier
 ESSAYES|2|Testés|Endossés en cabine
 FASSES|2|Que tu réalises|Que tu agisses
@@ -6522,7 +6521,7 @@ CITEES|2|Mentionnées|Convoquées
 COGNAC|1|Eau-de-vie|Ville charentaise
 COMMET|2|Fait une erreur|Perpètre
 CORNER|1|Coup de pied de coin|Klaxonner
-CORNES|1|Bois du taureau|Antennes d'escargot
+CORNES|1|Antennes d'escargot
 CROQUIS|1|Esquisse|Dessin rapide
 CRETEIL|2|Préfecture du 94|Ville du Val-de-Marne
 DEVINEZ|2|Trouvez l'énigme|Supposez
@@ -6607,7 +6606,7 @@ LANCEES|2|Jetées|Démarrées
 LOTUS|1|Fleur sacrée|Position de yoga
 MAHOMET|2|Prophète de l'islam|Fondateur d'une religion
 MATE|2|Sans éclat|Dompte
-MEUNIER|1|Il fait la farine|Sole ___
+MEUNIER|1|Il fait la farine
 MINIMA|2|Seuils les plus bas|Sociaux, pour l'aide
 MIROIRS|1|Glaces|Reflets
 MOTIVES|2|Stimulés|Justifiés
@@ -6632,7 +6631,6 @@ QUATUOR|1|Groupe de quatre|Formation à cordes
 QUIMPER|2|Ville bretonne|Faïence du Finistère
 REFONTE|2|Remaniement|Remise à plat
 REFUSEE|2|Rejetée|Recalée
-REVENT|3|Songe de nouveau|Imagine encore
 SCHEMAS|1|Croquis|Plans
 SERRURE|1|Pour la clé|Verrou
 STRAUSS|2|Compositeur viennois|Roi de la valse
@@ -7048,7 +7046,7 @@ SAVOIRS|1|Connaissances|Sciences
 STATU|2|___ quo|Maintien en l'état
 STIPULE|2|Précise|Spécifie
 SECU|1|Assurance maladie|Carte Vitale
-SERUM|1|Liquide injecté|Vaccin
+SERUM|1|Liquide injecté
 TELECOM|2|Réseau|Téléphonie
 TIGRES|1|Fauves rayés|Félins asiatiques
 TOMBANT|2|Chutant|Pendant
@@ -7273,7 +7271,7 @@ REFAIS|2|Je recommence|Recommence !
 RENIER|1|Désavouer|Abjurer
 RIVAGE|1|Rive|Côte
 RUCHE|1|Maison des abeilles|Fourmilière
-REGENT|2|Gouverne|Remplaçant du roi
+REGENT|2|Remplaçant du roi
 RENOVE|2|Remis à neuf|Restauré
 REPAND|2|Diffuse|Verse
 SAUVES|1|Secourus|Rescapés
@@ -7623,7 +7621,6 @@ INFIME|2|Minuscule|Très petit
 INTRO|2|Début de morceau|Préambule
 JUDAS|2|Traître|Petit œil de porte
 JUMEAU|1|Né en même temps|Sosie
-LISEE|3|Défroissée|Polie
 LOUPER|2|Rater|Manquer
 MANDELA|2|Héros sud-africain|Prix Nobel 1993
 MIAM|2|C'est bon !|Cri du gourmand
@@ -7810,7 +7807,7 @@ TIERCE|2|Pari hippique|Intervalle musical
 TRICHER|1|Frauder|Tromper au jeu
 TRUST|2|Cartel|Grand groupe
 TSAR|1|Empereur russe|Despote
-VERSETS|2|Passages de la Bible|Sourates
+VERSETS|2|Passages de la Bible
 VOLCANS|1|Monts qui crachent|Bouches de feu
 VOYOU|1|Petit délinquant|Garnement
 ENERVEE|2|Agacée|Irritée
@@ -7894,7 +7891,7 @@ BLONDS|1|Aux cheveux clairs|Dorés
 BORDEE|2|Entourée|Salve de canons
 BOWLING|1|Jeu de quilles|Lieu de strikes
 BOITIER|1|Corps d'appareil photo|Enveloppe de montre
-BROUSSE|2|Savane africaine|Fromage frais corse
+BROUSSE|2|Savane africaine
 BRULENT|2|Flambent|Consument
 CADENAS|1|Serrure mobile|Antivol
 CAPRICE|1|Lubie|Colère d'enfant
