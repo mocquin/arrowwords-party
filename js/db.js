@@ -185,8 +185,23 @@ export async function deleteRoom(id) {
     [`roomIndex/${id}`]: null,
     [`secret/${id}`]: null,
     [`found/${id}`]: null,
-    [`cells/${id}`]: null,
   });
+  // Paper-mode letters: separate, so a game can be deleted even if the rules
+  // in Firebase are older than paper mode.
+  await set(ref(db, `cells/${id}`), null).catch(() => {});
+}
+
+/**
+ * True when the rules pasted in Firebase are the current ones. Probes the most
+ * recent part of the rules (paper mode); older rules refuse to read it.
+ */
+export async function rulesUpToDate() {
+  try {
+    await get(ref(db, 'cells/__probe'));
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export async function listRooms() {

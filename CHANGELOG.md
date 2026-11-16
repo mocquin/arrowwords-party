@@ -1,5 +1,10 @@
 # Change log
 
+## 2026-11-16 — Deleting a game
+- "Supprimer" now works even if the security rules in Firebase are an older copy, and says so
+  if Firebase refuses.
+- The organizer page shows a yellow warning when the rules in Firebase need to be pasted again.
+
 ## 2026-11-15 — Full grids, paper mode, fair scores
 - Grids have no black boxes any more: every box is a letter or a definition, like printed grids.
   The top row and the left column alternate definition / letter.

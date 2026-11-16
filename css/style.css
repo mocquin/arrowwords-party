@@ -536,3 +536,9 @@ textarea.code {
 .q.a-down-right {
   padding-bottom: 6px;
 }
+
+.card.warn {
+  border-color: #e0a400;
+  background: #fff7dc;
+  color: #3d3200;
+}

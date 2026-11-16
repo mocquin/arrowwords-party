@@ -247,6 +247,7 @@ async function organizerPage() {
   S.profile = await DB.getPlayer(S.user.uid);
   renderMe(() => organizerPage());
 
+  const rulesOk = await DB.rulesUpToDate();
   const list = el('ul', { class: 'rooms' });
   const title = el('input', { placeholder: 'Nom de la partie (ex. Famille)', maxlength: 40 });
   const refresh = async () => {
@@ -265,7 +266,13 @@ async function organizerPage() {
                 class: 'danger',
                 onclick: async () => {
                   if (!confirm(`Supprimer la partie « ${r.title} » ? Les joueurs perdront leur grille.`)) return;
-                  await DB.deleteRoom(r.id);
+                  try {
+                    await DB.deleteRoom(r.id);
+                    toast('Partie supprimée.');
+                  } catch (e) {
+                    console.error(e);
+                    toast(`Suppression refusée (${e.code || e.message}).`, 'bad');
+                  }
                   refresh();
                 },
               }, 'Supprimer'),
@@ -275,6 +282,7 @@ async function organizerPage() {
     );
   };
   view(
+    rulesOk ? null : rulesBanner(),
     el('section', { class: 'card' },
       el('h1', {}, 'Vos parties'),
       el('p', { class: 'muted' }, "Chaque partie a son propre lien et sa propre grille. Donnez un lien différent à chaque groupe d'amis."),
@@ -302,6 +310,15 @@ async function organizerPage() {
     ),
   );
   refresh();
+}
+
+/** Warning shown when the rules in Firebase are older than the site. */
+function rulesBanner() {
+  return el('section', { class: 'card warn' },
+    el('strong', {}, 'Les règles de sécurité ont changé.'),
+    el('p', {}, 'Certaines actions (supprimer une partie, le mode « comme sur papier ») seront refusées tant qu’elles ne sont pas à jour. '
+      + 'Ouvrez « Réglages de sécurité » plus bas, cliquez sur « Copier les règles », puis dans Firebase : Realtime Database → Règles → tout remplacer → Publier.'),
+  );
 }
 
 /** Shows the organizer id and the ready-to-paste security rules. */
@@ -559,7 +576,13 @@ class Game {
             grid.salt = [...crypto.getRandomValues(new Uint8Array(12))].map((b) => b.toString(16).padStart(2, '0')).join('');
             grid.hash = await sha256(grid.salt + answerString(grid.rows, grid.cols, grid.letters));
           }
-          await DB.publishGrid(this.roomId, grid);
+          try {
+            await DB.publishGrid(this.roomId, grid);
+          } catch (e) {
+            console.error(e);
+            toast('Grille refusée par Firebase : mettez à jour les règles (Espace organisateur).', 'bad');
+            return;
+          }
           toast(`Nouvelle grille : ${grid.words.length} mots.`);
         } catch (e) {
           console.error(e);

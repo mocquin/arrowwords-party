@@ -177,6 +177,15 @@ try {
   await pl.getByText(/Grille juste/).waitFor({ timeout: 5000 });
   await pl.screenshot({ path: `${shots}09-paper-solved.png` });
 
+  // The organizer deletes the game; its link stops working.
+  await org.goto(`${BASE}?orga=1&emu=1`);
+  await org.getByText('Vos parties').waitFor();
+  assert.equal(await org.locator('.card.warn').count(), 0, 'rules are current: no warning');
+  await org.getByRole('button', { name: 'Supprimer' }).click();
+  await org.getByText('Aucune partie pour le moment.').waitFor({ timeout: 5000 });
+  assert.equal(await readAsOwner(`rooms/${roomId}`), null);
+  assert.equal(await readAsOwner(`cells/${roomId}`), null);
+
   // Unknown room link
   await pl.goto(`${BASE}?g=doesnotexist&emu=1`);
   await pl.getByText('Partie introuvable').waitFor();
