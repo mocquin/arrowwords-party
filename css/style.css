@@ -386,23 +386,23 @@ textarea.code {
   justify-content: center;
   text-align: center;
   padding: 1px 2px;
-  font-size: max(8px, calc(var(--cell) * 0.16));
-  line-height: 1.08;
+  font-size: 9px; /* real size set per definition by fitClues() */
+  font-family: 'Avenir Next Condensed', 'Roboto Condensed', 'Arial Narrow', sans-serif-condensed, system-ui, sans-serif;
+  font-stretch: condensed;
+  line-height: 1.05;
   overflow: hidden;
-  hyphens: auto;
-  overflow-wrap: anywhere;
+  min-width: 0;
+  min-height: 0;
 }
 .n2 .q + .q {
   border-top: 1px solid #9fb3cc;
 }
 .q .t {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.n2 .q .t {
-  -webkit-line-clamp: 2;
+  display: block;
+  max-width: 100%;
+  line-height: 1.05;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 .q.active {
   background: var(--sel);
@@ -541,4 +541,130 @@ textarea.code {
   border-color: #e0a400;
   background: #fff7dc;
   color: #3d3200;
+}
+
+/* --- phones and game layout --- */
+.grid,
+.kb {
+  touch-action: manipulation; /* no double-tap zoom while typing */
+}
+.cluebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  padding: 6px;
+}
+.cluetext {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+}
+.cluebar .nav {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 1;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.gridwrap {
+  overflow: visible;
+}
+@media (max-width: 640px) {
+  .top {
+    padding: 8px 12px;
+  }
+  .brand {
+    font-size: 16px;
+  }
+  .brand span {
+    display: none;
+  }
+  .view {
+    padding: 8px 8px 16px;
+  }
+  h1 {
+    font-size: 19px;
+  }
+  .gamehead {
+    margin-bottom: 6px;
+  }
+  .scores {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    padding-bottom: 2px;
+  }
+  .chip {
+    font-size: 13px;
+    padding: 2px 8px;
+    flex: none;
+  }
+  .cluebar {
+    top: 0;
+    margin-bottom: 6px;
+    border-radius: 8px;
+  }
+  .cluebar .cq {
+    font-size: 16px;
+  }
+  .gridwrap {
+    padding: 0;
+  }
+  .grid {
+    border-width: 1px;
+  }
+  body.in-game .foot {
+    display: none;
+  }
+  .kb {
+    margin: 6px -8px 0;
+    padding: 6px 4px calc(8px + env(safe-area-inset-bottom));
+    box-shadow: 0 -1px 0 var(--soft);
+  }
+  .kbrow {
+    gap: 4px;
+    margin: 5px 0;
+  }
+  .key {
+    padding: 0;
+    height: 44px;
+    font-size: 17px;
+    border-radius: 6px;
+  }
+  .q .arrow {
+    border-width: 3px;
+  }
+}
+
+/* Bent arrows: smaller marks, with space kept for them. */
+.q.a-right-down .arrow,
+.q.a-down-right .arrow {
+  width: 6px;
+  height: 6px;
+}
+.q.a-right-down .arrow {
+  margin-top: -3px;
+}
+.q.a-down-right .arrow {
+  margin-left: -3px;
+}
+.q.a-right {
+  padding-right: 5px;
+}
+.q.a-right-down {
+  padding-right: 8px;
+}
+.q.a-down {
+  padding-bottom: 4px;
+}
+.q.a-down-right {
+  padding-bottom: 8px;
 }

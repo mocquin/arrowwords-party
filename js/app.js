@@ -414,7 +414,11 @@ class Game {
   async start() {
     DB.watchRoom(this.roomId, (room) => this.onRoom(room));
     document.addEventListener('keydown', (e) => this.onKey(e));
-    window.addEventListener('resize', () => this.sizeGrid());
+    let t = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => this.sizeGrid(), 120);
+    });
   }
 
   async onRoom(room) {
@@ -538,23 +542,94 @@ class Game {
         }
       }
       parts.push(
-        el('div', { class: 'cluebar', id: 'cluebar' }),
+        el('div', { class: 'cluebar' },
+          el('button', { class: 'nav', 'aria-label': 'Définition précédente', onclick: () => this.step(-1) }, '‹'),
+          el('div', { class: 'cluetext', id: 'cluebar' }),
+          el('button', { class: 'nav', 'aria-label': 'Définition suivante', onclick: () => this.step(1) }, '›'),
+        ),
         el('div', { class: 'gridwrap', id: 'gridwrap' }, grid),
         keyboard((k) => this.input(k)),
       );
     }
     if (S.organizer) parts.push(this.organizerTools());
     view(...parts);
+    document.body.classList.add('in-game');
     this.sizeGrid();
     this.refreshAll();
   }
 
+  /** Go to the previous / next definition, in reading order of the clue boxes. */
+  step(delta) {
+    const m = this.model;
+    if (!m) return;
+    const order = m.words
+      .map((w, i) => ({ i, k: w.cr * m.cols + w.cc, a: w.arrow.startsWith('right') ? 0 : 1 }))
+      .sort((x, y) => x.k - y.k || x.a - y.a)
+      .map((x) => x.i);
+    const at = this.sel ? order.indexOf(this.sel.w) : -1;
+    const wi = order[(at + delta + order.length) % order.length];
+    this.select(wi, this.firstOpen(wi));
+  }
+
+  /**
+   * Make each definition fit its box: the largest font size at which the whole
+   * text is visible, words unbroken if possible. Never cut with "…".
+   */
+  fitClues() {
+    const g = $('#grid');
+    if (!g) return;
+    const cell = parseFloat(g.style.getPropertyValue('--cell')) || 44;
+    // Try whole words first, then hyphenation, then breaking anywhere.
+    const styles = [
+      ['manual', 'normal'],
+      ['auto', 'normal'],
+      ['auto', 'anywhere'],
+    ];
+    for (const t of g.querySelectorAll('.q .t')) {
+      const box = t.parentElement;
+      const cs = getComputedStyle(box);
+      const room = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      const fits = () => t.offsetHeight <= room + 0.5 && t.scrollWidth <= t.clientWidth + 0.5;
+      const largest = () => {
+        let lo = 4;
+        let hi = Math.max(7, cell * 0.27);
+        t.style.fontSize = `${hi}px`;
+        if (fits()) return hi;
+        for (let k = 0; k < 7; k++) {
+          const mid = (lo + hi) / 2;
+          t.style.fontSize = `${mid}px`;
+          if (fits()) lo = mid;
+          else hi = mid;
+        }
+        t.style.fontSize = `${lo}px`;
+        return fits() ? lo : 0;
+      };
+      let best = null;
+      for (const [hy, wrap] of styles) {
+        t.style.hyphens = hy;
+        t.style.webkitHyphens = hy;
+        t.style.overflowWrap = wrap;
+        const size = largest();
+        // Accept a gentler break only if it buys a clearly bigger text.
+        if (size && (!best || size > best.size * 1.25)) best = { size, hy, wrap };
+        if (best && best.size >= cell * 0.2) break;
+      }
+      best ??= { size: 4, hy: 'auto', wrap: 'anywhere' };
+      t.style.hyphens = best.hy;
+      t.style.webkitHyphens = best.hy;
+      t.style.overflowWrap = best.wrap;
+      t.style.fontSize = `${best.size}px`;
+    }
+  }
+
+  /** The grid always fits the screen width (no sideways scrolling). */
   sizeGrid() {
     const g = $('#grid');
     if (!g || !this.model) return;
-    const avail = Math.min($('#view').clientWidth, 960) - 4;
-    const size = Math.max(40, Math.min(60, Math.floor(avail / this.model.cols)));
+    const avail = Math.min($('#gridwrap').clientWidth, 960) - 4 - (this.model.cols - 1);
+    const size = Math.max(24, Math.min(64, Math.floor(avail / this.model.cols)));
     g.style.setProperty('--cell', `${size}px`);
+    this.fitClues();
   }
 
   organizerTools() {
@@ -761,7 +836,7 @@ class Game {
     bar.replaceChildren(
       el('span', { class: `dirtag ${w.d}`, text: w.d === 'h' ? '→' : '↓' }),
       el('span', { class: 'cq', text: w.q }),
-      el('span', { class: 'muted small', text: `${w.l} lettres` }),
+      el('span', { class: 'muted small nowrap', text: `${w.l} lettres` }),
       ...(who ? [el('span', { class: 'chip' }, el('span', { class: 'dot', style: `background:${who.c}` }), el('span', { text: `trouvé par ${who.n}` }))] : []),
     );
   }
@@ -773,7 +848,13 @@ class Game {
     const w = this.model.words[wi];
     for (const k of new Set([...old, ...w.keys, w.ck])) this.refreshCell(k);
     this.renderClueBar();
-    this.cellEls.get(key)?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    const node = this.cellEls.get(key);
+    if (node) {
+      const r = node.getBoundingClientRect();
+      const kb = $('#kb');
+      const bottom = kb && getComputedStyle(kb).display !== 'none' ? kb.getBoundingClientRect().top : innerHeight;
+      if (r.bottom > bottom - 8 || r.top < 70) node.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
   }
 
   firstOpen(wi) {

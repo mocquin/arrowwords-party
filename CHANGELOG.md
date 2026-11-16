@@ -1,5 +1,12 @@
 # Change log
 
+## 2026-11-16 — Better on phones
+- The grid always fits the screen width: no more sideways scrolling.
+- Definitions are never cut with "…": each one takes the largest text size that fits its box,
+  with a narrow font, and words are split only when they can't fit whole.
+- The definition bar has ‹ › buttons to go to the previous / next definition.
+- Phone layout: smaller header, bigger keyboard keys, no accidental zoom when tapping fast.
+
 ## 2026-11-16 — Deleting a game
 - "Supprimer" now works even if the security rules in Firebase are an older copy, and says so
   if Firebase refuses.

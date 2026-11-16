@@ -80,7 +80,28 @@ try {
   await pl.locator('.swatch').nth(4).click();
   await pl.getByRole('button', { name: "C'est parti" }).click();
   await pl.locator('#grid').waitFor();
+  await pl.waitForTimeout(300);
   await pl.screenshot({ path: `${shots}03-player-start.png` });
+  // Phone: no sideways scrolling, and every definition fully visible in its box.
+  const layout = await pl.evaluate(() => {
+    const over = [...document.querySelectorAll('#grid .q .t')].filter((t) => {
+      const q = t.parentElement;
+      return t.offsetHeight > q.clientHeight + 1 || t.scrollWidth > t.clientWidth + 1;
+    }).map((t) => t.textContent);
+    return { pageWidth: document.documentElement.scrollWidth, screen: innerWidth, over };
+  });
+  assert.ok(layout.pageWidth <= layout.screen, `page wider than the phone: ${layout.pageWidth} > ${layout.screen}`);
+  assert.deepEqual(layout.over, [], 'definitions cut off');
+  const small = await browser.newContext({ viewport: { width: 360, height: 740 }, hasTouch: true, isMobile: true, deviceScaleFactor: 2 });
+  const sp = await small.newPage();
+  await sp.goto(link);
+  await sp.locator('#profile-name').fill('Petit');
+  await sp.getByRole('button', { name: "C'est parti" }).click();
+  await sp.locator('#grid').waitFor();
+  await sp.locator('.q').first().click();
+  await sp.waitForTimeout(300);
+  await sp.screenshot({ path: `${shots}03b-small-phone.png` });
+  await small.close();
 
   // Player finds word 0 using the on-screen keyboard.
   const roomId = new URL(link).searchParams.get('g');
