@@ -133,6 +133,12 @@ try {
   }, firstKey);
   assert.match(bg, /rgb\(143, 214, 168\)|#8fd6a8/, `cell color was ${bg}`);
   await org.screenshot({ path: `${shots}05-organizer-sees.png`, fullPage: true });
+  // Hovering a found word shows its explanation.
+  await org.locator(`#grid .cell[data-key="${firstKey}"]`).hover();
+  await org.locator('#tip').waitFor({ state: 'visible', timeout: 3000 });
+  assert.match(await org.locator('#tip').innerText(), new RegExp(answer));
+  await org.screenshot({ path: `${shots}05b-explanation.png` });
+  await org.mouse.move(0, 0);
 
   // The organizer finds a word crossing Zoé's: only the new letters count.
   const keysOf = (w) => Array.from({ length: w.l }, (_, k) => `${w.r + (w.d === 'v' ? k : 0)},${w.c + (w.d === 'h' ? k : 0)}`);

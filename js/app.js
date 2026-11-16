@@ -353,6 +353,23 @@ async function copy(text) {
 
 // --- game room --------------------------------------------------------------------
 
+/** Explanations of the words (data/explications-fr.txt), loaded on first use. */
+let explanations = null;
+function loadExplanations() {
+  explanations ??= fetch('data/explications-fr.txt')
+    .then((r) => (r.ok ? r.text() : ''))
+    .then((text) => {
+      const m = new Map();
+      for (const line of text.split('\n')) {
+        const i = line.indexOf('|');
+        if (i > 0 && !line.startsWith('#')) m.set(line.slice(0, i).trim(), line.slice(i + 1).trim());
+      }
+      return m;
+    })
+    .catch(() => new Map());
+  return explanations;
+}
+
 /**
  * Make a grid in background workers (several in parallel, different seeds);
  * the first one to succeed wins.
@@ -537,6 +554,7 @@ class Game {
           } else {
             node = el('div', { class: 'cell letter', onclick: () => this.clickLetter(key) }, el('span', { class: 'ch' }));
           }
+          node.dataset.key = key;
           this.cellEls.set(key, node);
           grid.append(node);
         }
@@ -554,8 +572,49 @@ class Game {
     if (S.organizer) parts.push(this.organizerTools());
     view(...parts);
     document.body.classList.add('in-game');
+    const gridEl = $('#grid');
+    if (gridEl) {
+      gridEl.addEventListener('mouseover', (e) => this.hover(e));
+      gridEl.addEventListener('mouseleave', () => hideTip());
+      loadExplanations().then((m) => {
+        this.expl = m;
+        this.renderClueBar();
+      });
+    }
     this.sizeGrid();
     this.refreshAll();
+  }
+
+  /** The answer of a word, once it may be shown (found, or paper grid solved). */
+  answerOf(wi) {
+    if (this.model.mode === 'paper') {
+      if (this.check !== 'ok') return null;
+      return this.model.words[wi].keys.map((k) => this.letterAt(k).ch).join('');
+    }
+    return this.found[wi]?.w || null;
+  }
+
+  /** {word, text} explaining a found word, or null. */
+  explain(wi) {
+    const word = this.answerOf(wi);
+    if (!word) return null;
+    return { word, text: this.expl?.get(word) || this.model.words[wi].q };
+  }
+
+  /** Desktop: hovering a found word's box or definition shows its explanation. */
+  hover(e) {
+    if (!matchMedia('(hover: hover)').matches) return;
+    const q = e.target.closest('.q');
+    const cell = e.target.closest('.cell');
+    let list = [];
+    if (q) list = [Number(q.dataset.w)];
+    else if (cell?.dataset.key) {
+      const info = this.model.cell.get(cell.dataset.key);
+      if (info?.type === 'L') list = [info.h, info.v].filter((x) => x !== undefined);
+    }
+    const items = list.map((wi) => this.explain(wi)).filter(Boolean);
+    if (!items.length) return hideTip();
+    showTip(cell || q, items);
   }
 
   /** Go to the previous / next definition, in reading order of the clue boxes. */
@@ -723,6 +782,7 @@ class Game {
     else this.check = (await sha256(m.salt + answerString(m.rows, m.cols, letters))) === m.hash ? 'ok' : 'errors';
     if (this.check !== before) {
       this.renderScores();
+      this.renderClueBar();
       if (this.check === 'ok') toast('Grille terminée et juste, bravo à tous !', 'good');
       if (this.check === 'errors') toast('La grille est pleine, mais il y a des erreurs.', 'bad');
     }
@@ -838,6 +898,10 @@ class Game {
       el('span', { class: 'cq', text: w.q }),
       el('span', { class: 'muted small nowrap', text: `${w.l} lettres` }),
       ...(who ? [el('span', { class: 'chip' }, el('span', { class: 'dot', style: `background:${who.c}` }), el('span', { text: `trouvé par ${who.n}` }))] : []),
+      ...(() => {
+        const x = this.explain(this.sel.w);
+        return x ? [el('div', { class: 'why' }, el('b', { text: x.word }), ' — ', x.text)] : [];
+      })(),
     );
   }
 
@@ -989,6 +1053,30 @@ class Game {
       });
     }
   }
+}
+
+/** Floating explanation box (desktop hover). */
+function showTip(anchor, items) {
+  let tip = $('#tip');
+  if (!tip) {
+    tip = el('div', { id: 'tip', class: 'tip', role: 'tooltip' });
+    document.body.append(tip);
+  }
+  tip.replaceChildren(...items.map((x) => el('p', {}, el('b', { text: x.word }), ' — ', x.text)));
+  tip.hidden = false;
+  const r = anchor.getBoundingClientRect();
+  const w = Math.min(320, innerWidth - 16);
+  tip.style.width = `${w}px`;
+  const left = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2));
+  tip.style.left = `${left}px`;
+  const h = tip.offsetHeight;
+  const top = r.bottom + 8 + h < innerHeight ? r.bottom + 8 : r.top - h - 8;
+  tip.style.top = `${Math.max(8, top)}px`;
+}
+
+function hideTip() {
+  const tip = $('#tip');
+  if (tip) tip.hidden = true;
 }
 
 /** Turn the public grid into lookup tables for rendering. */

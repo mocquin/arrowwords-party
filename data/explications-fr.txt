@@ -1,0 +1,1 @@
+# Explications des mots, montrées une fois le mot trouvé. Format : MOT|explication

@@ -668,3 +668,32 @@ textarea.code {
 .q.a-down-right {
   padding-bottom: 8px;
 }
+
+/* --- explanations of found words --- */
+.why {
+  flex-basis: 100%;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--ink);
+  border-top: 1px dashed var(--soft);
+  padding-top: 4px;
+}
+.tip {
+  position: fixed;
+  z-index: 20;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--soft);
+  border-radius: 10px;
+  padding: 8px 12px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.18);
+  font-size: 14px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+.tip p {
+  margin: 0;
+}
+.tip p + p {
+  margin-top: 6px;
+}
