@@ -686,24 +686,24 @@ class Game {
     const g = $('#grid');
     if (!g || !this.model) return;
     const avail = Math.min($('#gridwrap').clientWidth, 960) - 4 - (this.model.cols - 1);
-    const size = Math.max(24, Math.min(64, Math.floor(avail / this.model.cols)));
+    const size = Math.max(20, Math.min(64, Math.floor(avail / this.model.cols)));
     g.style.setProperty('--cell', `${size}px`);
     this.fitClues();
   }
 
   organizerTools() {
     const level = el('select', {}, ...Object.entries(LEVELS).map(([k, v]) => el('option', { value: k, selected: k === 'moyen' }, v.label)));
-    const size = el('select', {}, ...Object.entries(SIZES).map(([k, v]) => el('option', { value: k }, v.label)));
+    const size = el('select', {}, ...Object.entries(SIZES).map(([k, v]) => el('option', { value: k, selected: k === 'normale' }, v.label)));
     const mode = el('select', {}, ...Object.entries(MODES).map(([k, v]) => el('option', { value: k }, v.label)));
     const btn = el('button', {
       class: 'primary',
       onclick: async () => {
         if (this.model && !confirm('Remplacer la grille actuelle pour tout le monde ?')) return;
         btn.disabled = true;
-        btn.textContent = 'Génération… (jusqu’à une minute)';
+        btn.textContent = 'Génération…';
         try {
           const sz = SIZES[size.value];
-          const grid = await generateInWorkers({ level: level.value, rows: sz.rows, cols: sz.cols });
+          const grid = await generateInWorkers({ level: level.value, rows: sz.rows, cols: sz.cols, timeLimitMs: sz.timeLimitMs });
           grid.letters = lettersOf(grid.words);
           grid.mode = mode.value;
           if (grid.mode === 'paper') {

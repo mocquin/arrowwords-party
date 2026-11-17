@@ -29,9 +29,11 @@ export const LEVELS = {
 
 /** Grid sizes the organizer can choose (columns × rows). */
 export const SIZES = {
-  normale: { label: 'Normale (10 × 14)', rows: 14, cols: 10 },
-  petite: { label: 'Petite (10 × 10)', rows: 10, cols: 10 },
-  grande: { label: 'Grande (12 × 16), plus longue à créer', rows: 16, cols: 12 },
+  petite: { label: 'Petite (10 × 10)', rows: 10, cols: 10, timeLimitMs: 60000 },
+  normale: { label: 'Normale (10 × 14)', rows: 14, cols: 10, timeLimitMs: 60000 },
+  moyenne: { label: 'Moyenne (12 × 16)', rows: 16, cols: 12, timeLimitMs: 90000 },
+  grande: { label: 'Grande (14 × 18), environ 30 s', rows: 18, cols: 14, timeLimitMs: 120000 },
+  geante: { label: 'Géante (15 × 20), 1 à 2 min', rows: 20, cols: 15, timeLimitMs: 150000 },
 };
 
 /** How answers are checked (chosen by the organizer for each grid). */
@@ -95,38 +97,75 @@ export function makeRng(seed) {
 }
 
 
-/** Prefix tables used by the search. */
+/**
+ * Letter tree (trie) of the usable words, in flat typed arrays for speed.
+ * Node 0 is the root; child[node * 26 + letter] is the next node or -1.
+ */
 function buildIndex(entries, weights) {
-  const words = new Set();
-  const weight = new Map(); // prefix -> summed weight of words with it
-  const minLen = new Map(); // prefix -> shortest word length with it
+  let cap = 1 << 15;
+  let child = new Int32Array(cap * 26).fill(-1);
+  let weight = new Float64Array(cap); // summed weight of the words through the node
+  let minLen = new Uint8Array(cap).fill(255); // shortest word through the node
+  let wordId = new Int32Array(cap).fill(-1); // word ending exactly here
+  let n = 1;
+  const words = [];
+  const grow = () => {
+    const c2 = cap * 2;
+    const ch = new Int32Array(c2 * 26).fill(-1);
+    ch.set(child);
+    const w = new Float64Array(c2);
+    w.set(weight);
+    const m = new Uint8Array(c2).fill(255);
+    m.set(minLen);
+    const id = new Int32Array(c2).fill(-1);
+    id.set(wordId);
+    [child, weight, minLen, wordId, cap] = [ch, w, m, id, c2];
+  };
   for (const e of entries) {
-    if (e.w.length > MAX_RUN) continue;
-    words.add(e.w);
+    if (e.w.length > MAX_RUN || !/^[A-Z]+$/.test(e.w)) continue;
     const wt = weights[e.tier - 1];
-    for (let i = 1; i <= e.w.length; i++) {
-      const p = e.w.slice(0, i);
-      weight.set(p, (weight.get(p) || 0) + wt);
-      if (!minLen.has(p) || minLen.get(p) > e.w.length) minLen.set(p, e.w.length);
+    let node = 0;
+    for (let i = 0; i < e.w.length; i++) {
+      const L = e.w.charCodeAt(i) - 65;
+      let next = child[node * 26 + L];
+      if (next < 0) {
+        if (n >= cap) grow();
+        next = n++;
+        child[node * 26 + L] = next;
+      }
+      node = next;
+      weight[node] += wt;
+      if (minLen[node] > e.w.length) minLen[node] = e.w.length;
+    }
+    if (wordId[node] < 0) {
+      wordId[node] = words.length;
+      words.push(e.w);
     }
   }
-  return { words, weight, minLen };
+  return { child, weight, minLen, wordId, nWords: words.length };
 }
 
-/** One attempt. Returns the cell array or null. */
+const CLUE_CODE = 26;
+
+/** One attempt. Returns the cell array ('#' or a letter per cell) or null. */
 function fillOnce(rows, cols, index, rng, nodeLimit) {
-  const { words, weight, minLen } = index;
+  const { child, weight, minLen, wordId, nWords } = index;
   const N = rows * cols;
-  const g = new Array(N).fill(null);
-  const used = new Set();
+  const g = new Int8Array(N).fill(-1); // -1 undecided, 0..25 letter, 26 clue
+  const aNode = new Int32Array(N);
+  const aLen = new Uint8Array(N);
+  const dNode = new Int32Array(N);
+  const dLen = new Uint8Array(N);
+  const used = new Uint8Array(nWords);
   const single = [new Uint8Array(N), new Uint8Array(N)]; // [across run of 1, down run of 1]
-  const at = (r, c) => g[r * cols + c];
+  const logW = (node) => Math.log(weight[node]);
   let nodes = 0;
 
-  const canEnd = (p, room) => p.length === 1 || words.has(p) || minLen.get(p) - p.length <= room;
-  const isLetter = (r, c) => r >= 0 && c >= 0 && r < rows && c < cols && at(r, c) !== CLUE; // undecided counts
-  const startsDown = (r, c) => r === 0 || at(r - 1, c) === CLUE || at(r - 1, c) === null;
-  const startsAcross = (r, c) => c === 0 || at(r, c - 1) === CLUE || at(r, c - 1) === null;
+  const canEnd = (node, len, room) => len === 1 || wordId[node] >= 0 || minLen[node] - len <= room;
+  const at = (r, c) => g[r * cols + c];
+  const isLetter = (r, c) => r >= 0 && c >= 0 && r < rows && c < cols && at(r, c) !== CLUE_CODE; // undecided counts
+  const startsDown = (r, c) => r === 0 || at(r - 1, c) === CLUE_CODE || at(r - 1, c) === -1;
+  const startsAcross = (r, c) => c === 0 || at(r, c - 1) === CLUE_CODE || at(r, c - 1) === -1;
   // Can the clue cell (r, c) still point to a word? Undecided cells count as letters.
   const clueUseful = (r, c) =>
     (isLetter(r, c + 1) && isLetter(r, c + 2)) ||
@@ -134,93 +173,120 @@ function fillOnce(rows, cols, index, rng, nodeLimit) {
     (isLetter(r, c + 1) && isLetter(r + 1, c + 1) && startsDown(r, c + 1)) ||
     (isLetter(r + 1, c) && isLetter(r + 1, c + 1) && startsAcross(r + 1, c));
 
-  function runBefore(r, c, dr, dc) {
-    let s = '';
-    for (let y = r - dr, x = c - dc; y >= 0 && x >= 0 && at(y, x) !== CLUE; y -= dr, x -= dc) s = at(y, x) + s;
-    return s;
-  }
-
-  // Mark a closed run of length 1 and fail if its letter is alone both ways.
   function markSingle(dir, i, undo) {
     single[dir][i] = 1;
     undo.push(() => (single[dir][i] = 0));
     return !single[1 - dir][i];
   }
-
-  function closeRun(s, undo) {
-    if (s.length < 2) return true;
-    if (!words.has(s) || used.has(s)) return false;
-    used.add(s);
-    undo.push(() => used.delete(s));
+  function closeWord(node, len, undo) {
+    if (len < 2) return true;
+    const id = wordId[node];
+    if (id < 0 || used[id]) return false;
+    used[id] = 1;
+    undo.push(() => (used[id] = 0));
     return true;
   }
+
+  const NEAR = [[0, 0], [0, -1], [0, -2], [-1, 0], [-2, 0], [-1, -1], [-1, 1], [-1, -2]];
+  const order = new Int8Array(27);
+  const scores = new Float64Array(27);
 
   function rec(i) {
     if (i === N) return true;
     if (++nodes > nodeLimit) return false;
     const r = Math.floor(i / cols);
     const c = i % cols;
-    const a = runBefore(r, c, 0, 1);
-    const d = runBefore(r, c, 1, 0);
+    const prevA = c > 0 && g[i - 1] >= 0 && g[i - 1] < 26;
+    const an0 = prevA ? aNode[i - 1] : 0;
+    const al0 = prevA ? aLen[i - 1] : 0;
+    const prevD = r > 0 && g[i - cols] >= 0 && g[i - cols] < 26;
+    const dn0 = prevD ? dNode[i - cols] : 0;
+    const dl0 = prevD ? dLen[i - cols] : 0;
 
     // Candidate values, best first.
     const frame = r === 0 || c === 0 ? (r === 0 ? c : r) % 2 === 0 : null; // true: clue forced
-    const letters = [];
+    let k = 0;
     if (frame !== true) {
-      for (const L of ALPHABET) {
-        const na = a + L;
-        const nd = d + L;
-        if (na.length > MAX_RUN || nd.length > MAX_RUN) continue;
-        const wa = weight.get(na);
-        const wd = weight.get(nd);
-        if (!wa || !wd) continue;
-        if (!canEnd(na, Math.min(cols - 1 - c, MAX_RUN - na.length))) continue;
-        if (!canEnd(nd, Math.min(rows - 1 - r, MAX_RUN - nd.length))) continue;
-        letters.push({ L, s: Math.log(wa) + Math.log(wd) + rng() * 3 });
+      const roomA = Math.min(cols - 1 - c, MAX_RUN - al0 - 1);
+      const roomD = Math.min(rows - 1 - r, MAX_RUN - dl0 - 1);
+      for (let L = 0; L < 26; L++) {
+        const na = child[an0 * 26 + L];
+        if (na < 0) continue;
+        const nd = child[dn0 * 26 + L];
+        if (nd < 0) continue;
+        if (!canEnd(na, al0 + 1, roomA) || !canEnd(nd, dl0 + 1, roomD)) continue;
+        order[k] = L;
+        scores[k] = logW(na) + logW(nd) + rng() * 3;
+        k++;
       }
-      letters.sort((x, y) => y.s - x.s);
+      // insertion sort, best first
+      for (let x = 1; x < k; x++) {
+        const L = order[x];
+        const sc = scores[x];
+        let y = x - 1;
+        while (y >= 0 && scores[y] < sc) {
+          order[y + 1] = order[y];
+          scores[y + 1] = scores[y];
+          y--;
+        }
+        order[y + 1] = L;
+        scores[y + 1] = sc;
+      }
     }
-    const order = letters.map((x) => x.L);
     const clueAllowed = frame !== false && !(r === rows - 1 && c === cols - 1);
     if (clueAllowed) {
-      if (frame === true) order.unshift(CLUE);
-      else if (a.length === 0 && d.length === 0) order.push(CLUE);
+      let pos;
+      if (frame === true) pos = 0;
+      else if (al0 === 0 && dl0 === 0) pos = k;
       else {
-        const good = words.has(a) || words.has(d);
-        order.splice(good && rng() < 0.5 ? 0 : Math.min(order.length, 1 + Math.floor(rng() * 3)), 0, CLUE);
+        const good = (al0 >= 2 && wordId[an0] >= 0) || (dl0 >= 2 && wordId[dn0] >= 0);
+        pos = good && rng() < 0.5 ? 0 : Math.min(k, 1 + Math.floor(rng() * 3));
       }
+      for (let x = k; x > pos; x--) order[x] = order[x - 1];
+      order[pos] = CLUE_CODE;
+      k++;
     }
+    const opts = order.slice(0, k);
 
-    for (const L of order) {
+    for (const L of opts) {
       const undo = [];
       let ok = true;
-      if (L === CLUE) {
-        if (a.length === 1) ok = markSingle(0, i - 1, undo);
-        if (ok && d.length === 1) ok = markSingle(1, i - cols, undo);
-        if (ok) ok = closeRun(a, undo) && closeRun(d, undo);
+      if (L === CLUE_CODE) {
+        if (al0 === 1) ok = markSingle(0, i - 1, undo);
+        if (ok && dl0 === 1) ok = markSingle(1, i - cols, undo);
+        if (ok) ok = closeWord(an0, al0, undo) && closeWord(dn0, dl0, undo);
       } else {
-        if (c === cols - 1) ok = (a + L).length === 1 ? markSingle(0, i, undo) : closeRun(a + L, undo);
-        if (ok && r === rows - 1) ok = (d + L).length === 1 ? markSingle(1, i, undo) : closeRun(d + L, undo);
+        const na = child[an0 * 26 + L];
+        const nd = child[dn0 * 26 + L];
+        aNode[i] = na;
+        aLen[i] = al0 + 1;
+        dNode[i] = nd;
+        dLen[i] = dl0 + 1;
+        if (c === cols - 1) ok = al0 === 0 ? markSingle(0, i, undo) : closeWord(na, al0 + 1, undo);
+        if (ok && r === rows - 1) ok = dl0 === 0 ? markSingle(1, i, undo) : closeWord(nd, dl0 + 1, undo);
       }
       if (ok) {
         g[i] = L;
         // Clue cells whose neighbourhood just changed must stay useful.
-        for (const [y, x] of [[r, c], [r, c - 1], [r, c - 2], [r - 1, c], [r - 2, c], [r - 1, c - 1], [r - 1, c + 1], [r - 1, c - 2]]) {
-          if (y >= 0 && x >= 0 && x < cols && at(y, x) === CLUE && !clueUseful(y, x)) {
+        for (const [dy, dx] of NEAR) {
+          const y = r + dy;
+          const x = c + dx;
+          if (y >= 0 && x >= 0 && x < cols && at(y, x) === CLUE_CODE && !clueUseful(y, x)) {
             ok = false;
             break;
           }
         }
         if (ok && rec(i + 1)) return true;
-        g[i] = null;
+        g[i] = -1;
       }
-      for (let k = undo.length - 1; k >= 0; k--) undo[k]();
+      for (let u = undo.length - 1; u >= 0; u--) undo[u]();
       if (nodes > nodeLimit) return false;
     }
     return false;
   }
 
-  return rec(0) ? g : null;
+  if (!rec(0)) return null;
+  return Array.from(g, (x) => (x === CLUE_CODE ? CLUE : String.fromCharCode(65 + x)));
 }
 
 /** All runs of 2+ letters, as words with their position. */

@@ -1,5 +1,11 @@
 # Change log
 
+## 2026-11-17 — Bigger grids
+- Five sizes in Outils organisateur → Taille: Petite (10 × 10), Normale (10 × 14),
+  Moyenne (12 × 16), Grande (14 × 18) and Géante (15 × 20).
+- Grids are made about 10 to 20 times faster. Typical times on a computer: Moyenne about 1 s,
+  Grande 5 to 15 s, Géante 10 s to 2 min.
+
 ## 2026-11-16 — Explanations of found words
 - Once a word is found (or, in paper mode, once the grid is complete and right), hovering its
   boxes or its definition on a computer shows an explanation. On a phone, tap a found word: the

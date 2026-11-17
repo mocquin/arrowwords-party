@@ -21,8 +21,9 @@ words and in terms of what the owner clicks.
 `tests/shots/*.png`. Add an entry to `CHANGELOG.md`.
 
 ## Known limits (v1)
-- The generator fills every cell (no black cells). Sizes above 12 × 16 do not fill in time with
-  ~8,000 words; a bigger word list (more 2–7 letter words) is the main lever, then search speed.
+- The generator fills every cell (no black cells), using a typed-array trie. 15 × 20 takes
+  10 s–2 min in a browser with parallel workers; wider grids need more words or a smarter search.
+  `tests/big-grid.mjs` times the large sizes in a real browser.
 - Paper mode trusts players for letters (anyone in the game can overwrite a box); only a SHA-256
   fingerprint of the full grid is public, so single answers stay hidden.
 - A player who clears their browser loses their name; the organizer can free names (not in the
